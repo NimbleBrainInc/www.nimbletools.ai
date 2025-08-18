@@ -66,7 +66,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
     <header>
         <nav class="container">
-            <a href="/" class="logo">nimbletools</a>
+            <a href="/" class="logo">
+                <img src="/assets/images/nimbletools-logo-n-transparent.png" alt="NimbleTools Logo" width="32" height="32" />
+                <span>NimbleTools</span>
+            </a>
             <div class="nav-links">
                 <a href="/" class={currentPage === 'home' ? 'active' : ''}>Home</a>
                 <a href="/custom-mcp-servers" class={currentPage === 'custom-mcp-servers' ? 'active' : ''}>Custom MCP Servers</a>
@@ -229,7 +232,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     .logo {
         font-size: 24px;
         font-weight: 700;
-        color: var(--accent);
+        color: var(--text-primary);
         text-decoration: none;
         display: flex;
         align-items: center;
