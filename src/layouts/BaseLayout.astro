@@ -1,4 +1,6 @@
 ---
+import nimbleToolsLogo from '../assets/images/nimbletools-logo-n-transparent.png';
+
 export interface Props {
   title: string;
   description: string;
@@ -67,7 +69,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <header>
         <nav class="container">
             <a href="/" class="logo">
-                <img src="/assets/images/nimbletools-logo-n-transparent.png" alt="NimbleTools Logo" width="32" height="32" />
+                <img src={nimbleToolsLogo.src} alt="NimbleTools Logo" width="32" height="32" />
                 <span>NimbleTools</span>
             </a>
             <div class="nav-links">
