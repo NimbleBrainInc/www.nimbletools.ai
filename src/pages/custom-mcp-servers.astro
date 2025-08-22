@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { externalLinks } from '../config/externalLinks.js';
 ---
 
 <BaseLayout
@@ -12,7 +13,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h1>Custom MCP Servers<br>Built for Your Needs</h1>
         <p class="subtitle">Professional development of Model Context Protocol servers tailored to your specific requirements, APIs, and workflows.</p>
         <div class="hero-cta">
-            <a href="https://calendly.com/mat-nimblebrain/nimbletools-demo-30min" class="primary-cta">
+            <a href="{externalLinks.schedulingLink}" class="primary-cta">
                 <span>Get Started</span>
                 <span>→</span>
             </a>
@@ -207,7 +208,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <h2>Ready to Build?</h2>
             <p>Let's discuss your custom MCP server requirements and how we can help bring your vision to life.</p>
             <div class="hero-cta">
-                <a href="https://calendly.com/mat-nimblebrain/nimbletools-demo-30min" class="primary-cta">
+                <a href="{externalLinks.schedulingLink}" class="primary-cta">
                     <span>Schedule Consultation</span>
                     <span>→</span>
                 </a>

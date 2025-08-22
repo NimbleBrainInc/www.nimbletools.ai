@@ -1,216 +1,269 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { externalLinks } from "../config/externalLinks.js";
 ---
 
 <BaseLayout
-    title="NimbleTools - Enterprise MCP Runtime Platform"
-    description="Enterprise MCP server infrastructure and orchestration. Managed runtime with isolated workspaces, SSO, and cloud deployment for platform engineering teams."
-    keywords="MCP, Model Context Protocol, MCP servers, enterprise AI, platform engineering, SSO, BYOC, compliance, DevOps, infrastructure orchestration"
-    currentPage="home"
+  title="NimbleTools - Enterprise MCP Runtime Platform"
+  description="Enterprise MCP server infrastructure and orchestration. Managed runtime with isolated workspaces, SSO, and cloud deployment for platform engineering teams."
+  keywords="MCP, Model Context Protocol, MCP servers, enterprise AI, platform engineering, SSO, BYOC, compliance, DevOps, infrastructure orchestration"
+  currentPage="home"
 >
-    <section class="hero container">
-        <h1>Enterprise MCP Server<br>Infrastructure & Orchestration</h1>
-        <p class="subtitle">Deploy remote MCP servers instantly. Scale from individual workloads to enterprise production without infrastructure headaches.</p>
-        <div class="hero-cta">
-            <a href="#get-started" class="primary-cta">
-                <span>Start Building</span>
-                <span>→</span>
-            </a>
-            <a href="https://calendly.com/mat-nimblebrain/nimbletools-demo-30min" class="secondary-cta">Talk to Platform Team</a>
+  <section class="hero container">
+    <h1>Enterprise MCP Server<br />Infrastructure & Orchestration</h1>
+    <p class="subtitle">
+      Deploy remote MCP servers instantly. Scale from individual workloads to
+      enterprise production without infrastructure headaches.
+    </p>
+    <div class="hero-cta">
+      <a href="#get-started" class="primary-cta">
+        <span>Start Building</span>
+        <span>→</span>
+      </a>
+      <a href={externalLinks.schedulingLink} class="secondary-cta"
+        >Talk to Platform Team</a
+      >
+    </div>
+
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <span>🏢</span>
+        <span>SSO, Audit Logs & SLAs</span>
+      </div>
+      <div class="trust-badge">
+        <span>☁️</span>
+        <span>AWS, Azure & GCP Ready</span>
+      </div>
+      <div class="trust-badge">
+        <span>🔐</span>
+        <span>BYOC & Enterprise Security</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="product-tiers">
+    <div class="container">
+      <a href="#deploy"></a>
+      <h2 class="section-title">Infrastructure That Scales With You</h2>
+      <p class="section-subtitle">
+        Start with our managed cloud, graduate to your own infrastructure when
+        business demands it.
+      </p>
+
+      <div class="tier-grid">
+        <div class="tier-card">
+          <div class="tier-name">INDIVIDUAL & TEAMS</div>
+          <h3 class="tier-title">NimbleTools Cloud</h3>
+          <p class="tier-description">
+            Fully managed MCP runtime for individuals and small teams. Perfect
+            for proving value with MCP servers or early-stage development.
+          </p>
+
+          <ul class="tier-features">
+            <li>CLI-first deployment (<10 minutes)</li>
+            <li>Isolated workspaces & scoped tokens</li>
+            <li>Scaleable resources (cost tracks usage)</li>
+            <li>Built-in secret management</li>
+            <li>MCP client integration</li>
+            <li>5,000 free calls/month</li>
+          </ul>
+
+          <a href="#get-started" class="tier-cta cloud">Install CLI (Free)</a>
         </div>
-        
-        <div class="trust-badges">
-            <div class="trust-badge">
-                <span>🏢</span>
-                <span>SSO, Audit Logs & SLAs</span>
-            </div>
-            <div class="trust-badge">
-                <span>☁️</span>
-                <span>AWS, Azure & GCP Ready</span>
-            </div>
-            <div class="trust-badge">
-                <span>🔐</span>
-                <span>BYOC & Enterprise Security</span>
-            </div>
+
+        <div class="tier-card enterprise">
+          <div class="tier-badge">ENTERPRISE READY</div>
+          <div class="tier-name">ENTERPRISE</div>
+          <h3 class="tier-title">NimbleTools Runtime</h3>
+          <p class="tier-description">
+            BYOC deployment on AWS, Azure, or GCP. Full compliance, audit logs,
+            SSO integration, and SLAs for enterprise production.
+          </p>
+
+          <ul class="tier-features">
+            <li>Deploy to AWS, Azure, or GCP</li>
+            <li>SSO/SAML (Okta, Entra, etc.)</li>
+            <li>Audit logs & compliance reporting</li>
+            <li>Full control & customization</li>
+            <li>99.9% uptime SLA</li>
+            <li>Dedicated platform support</li>
+          </ul>
+
+          <a href={externalLinks.schedulingLink} class="tier-cta enterprise"
+            >Talk to Platform Team</a
+          >
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="product-tiers">
-        <div class="container">
-            <a href="#deploy"></a>
-            <h2 class="section-title">Infrastructure That Scales With You</h2>
-            <p class="section-subtitle">Start with our managed cloud, graduate to your own infrastructure when business demands it.</p>
-            
-            <div class="tier-grid">
-                <div class="tier-card">
-                    <div class="tier-name">INDIVIDUAL & TEAMS</div>
-                    <h3 class="tier-title">NimbleTools Cloud</h3>
-                    <p class="tier-description">Fully managed MCP runtime for individuals and small teams. Perfect for proving value with MCP servers or early-stage development.</p>
-                    
-                    <ul class="tier-features">
-                        <li>CLI-first deployment (<10 minutes)</li>
-                        <li>Isolated workspaces & scoped tokens</li>
-                        <li>Scaleable resources (cost tracks usage)</li>
-                        <li>Built-in secret management</li>
-                        <li>MCP client integration</li>
-                        <li>5,000 free calls/month</li>
-                    </ul>
-                    
-                    <a href="#get-started" class="tier-cta cloud">Install CLI (Free)</a>
-                </div>
-                
-                <div class="tier-card enterprise">
-                    <div class="tier-badge">ENTERPRISE READY</div>
-                    <div class="tier-name">ENTERPRISE</div>
-                    <h3 class="tier-title">NimbleTools Runtime</h3>
-                    <p class="tier-description">BYOC deployment on AWS, Azure, or GCP. Full compliance, audit logs, SSO integration, and SLAs for enterprise production.</p>
-                    
-                    <ul class="tier-features">
-                        <li>Deploy to AWS, Azure, or GCP</li>
-                        <li>SSO/SAML (Okta, Entra, etc.)</li>
-                        <li>Audit logs & compliance reporting</li>
-                        <li>Full control & customization</li>
-                        <li>99.9% uptime SLA</li>
-                        <li>Dedicated platform support</li>
-                    </ul>
-                    
-                    <a href="https://calendly.com/mat-nimblebrain/nimbletools-demo-30min" class="tier-cta enterprise">Talk to Platform Team</a>
-                </div>
-            </div>
+  <section class="terminal-section container" id="demo">
+    <h2 class="section-title">See It In Action</h2>
+    <p class="section-subtitle">
+      Deploy and scale MCP servers with simple commands
+    </p>
+
+    <div class="terminal-container">
+      <div class="terminal-header">
+        <div class="terminal-dot red"></div>
+        <div class="terminal-dot yellow"></div>
+        <div class="terminal-dot green"></div>
+        <span class="terminal-title">nimble tools journey</span>
+      </div>
+      <div class="terminal-body" id="terminal">
+        <!-- Terminal content will be dynamically added -->
+      </div>
+    </div>
+  </section>
+
+  <section class="mcp-clients-section">
+    <div class="container">
+      <h2 class="section-title">Works With Your Favorite MCP Clients</h2>
+      <p class="section-subtitle">
+        Connect any MCP-compatible client to your remote servers
+      </p>
+
+      <div class="clients-row">
+        <div class="client-logo claude-web">
+          <img
+            src="https://cdn.brandfetch.io/claude.ai/w/338/h/338?c=1idyxjg0fWEyhdkPzvM"
+            alt="Claude"
+            width="64"
+            height="64"
+          />
         </div>
-    </section>
 
-    <section class="terminal-section container" id="demo">
-        <h2 class="section-title">See It In Action</h2>
-        <p class="section-subtitle">Deploy and scale MCP servers with simple commands</p>
-        
-        <div class="terminal-container">
-            <div class="terminal-header">
-                <div class="terminal-dot red"></div>
-                <div class="terminal-dot yellow"></div>
-                <div class="terminal-dot green"></div>
-                <span class="terminal-title">nimble tools journey</span>
-            </div>
-            <div class="terminal-body" id="terminal">
-                <!-- Terminal content will be dynamically added -->
-            </div>
+        <div class="client-logo openai">
+          <img
+            src="https://cdn.brandfetch.io/openai.com/w/512/h/512?c=1idyxjg0fWEyhdkPzvM"
+            alt="OpenAI"
+            width="64"
+            height="64"
+          />
         </div>
-    </section>
 
-    <section class="mcp-clients-section">
-        <div class="container">
-            <h2 class="section-title">Works With Your Favorite MCP Clients</h2>
-            <p class="section-subtitle">Connect any MCP-compatible client to your remote servers</p>
-            
-            <div class="clients-row">
-                <div class="client-logo claude-web">
-                    <img src="https://cdn.brandfetch.io/claude.ai/w/338/h/338?c=1idyxjg0fWEyhdkPzvM" alt="Claude" width="64" height="64" />
-                </div>
-
-                <div class="client-logo openai">
-                    <img src="https://cdn.brandfetch.io/openai.com/w/512/h/512?c=1idyxjg0fWEyhdkPzvM" alt="OpenAI" width="64" height="64" />
-                </div>
-
-                <div class="client-logo cursor">
-                    <img src="https://cdn.brandfetch.io/cursor.com/w/400/h/400?c=1idyxjg0fWEyhdkPzvM" alt="Cursor" width="64" height="64" />
-                </div>
-
-                <div class="client-logo google">
-                    <img src="https://cdn.brandfetch.io/google.com/w/400/h/400?c=1idyxjg0fWEyhdkPzvM" alt="Google" width="64" height="64" />
-                </div>
-                
-                
-                <div class="client-logo continue">
-                    <img src="https://cdn.brandfetch.io/visualstudio.com/w/512/h/512/logo?c=1idyxjg0fWEyhdkPzvM" alt="VS Code" width="64" height="64" />
-                </div>
-                
-                <div class="client-logo windsurf">
-                    <img src="https://cdn.brandfetch.io/codeium.com/w/400/h/400?c=1idyxjg0fWEyhdkPzvM" alt="Windsurf" width="64" height="64" />
-                </div>
-                
-                <div class="client-logo langchain">
-                    <img src="https://cdn.brandfetch.io/langchain.com/w/400/h/400?c=1idyxjg0fWEyhdkPzvM" alt="LangChain" width="64" height="64" />
-                </div>
-                
-               
-            </div>
+        <div class="client-logo cursor">
+          <img
+            src="https://cdn.brandfetch.io/cursor.com/w/400/h/400?c=1idyxjg0fWEyhdkPzvM"
+            alt="Cursor"
+            width="64"
+            height="64"
+          />
         </div>
-    </section>
 
-    <section class="features-comparison container">
-        <h2 class="section-title">Feature Comparison</h2>
-        <p class="section-subtitle">Everything you need, wherever you deploy</p>
-        
-        <div class="comparison-table">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>NimbleTools Cloud</th>
-                        <th>NimbleTools Runtime</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>CLI-First Deployment</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Isolated Workspaces</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Scaleable Resources</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>MCP Client Integration</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Deploy to Your Cloud (AWS/Azure/GCP)</td>
-                        <td class="dash">–</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>SSO/SAML (Okta, Entra)</td>
-                        <td class="dash">–</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Audit Logs & Compliance</td>
-                        <td>Basic</td>
-                        <td>Enterprise</td>
-                    </tr>
-                    <tr>
-                        <td>SLA & Support</td>
-                        <td>Best Effort</td>
-                        <td>99.9% + Dedicated</td>
-                    </tr>
-                    <tr>
-                        <td>Enterprise Security & Compliance</td>
-                        <td class="dash">–</td>
-                        <td class="check">✓</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="client-logo google">
+          <img
+            src="https://cdn.brandfetch.io/google.com/w/400/h/400?c=1idyxjg0fWEyhdkPzvM"
+            alt="Google"
+            width="64"
+            height="64"
+          />
         </div>
-    </section>
 
-    <section class="social-proof" id="get-started">
-        <div class="container">
-            <h2 class="section-title">Get Started with the CLI</h2>
-            <p class="section-subtitle">Install once, deploy anywhere</p>
-            
-            <div class="cli-install-section">
-                <div class="install-card">
-                    <h3>Quick Install</h3>
-                    <div class="code-block">
-                        <pre><span class="code-comment"># Install the NimbleTools CLI</span>
+        <div class="client-logo continue">
+          <img
+            src="https://cdn.brandfetch.io/visualstudio.com/w/512/h/512/logo?c=1idyxjg0fWEyhdkPzvM"
+            alt="VS Code"
+            width="64"
+            height="64"
+          />
+        </div>
+
+        <div class="client-logo windsurf">
+          <img
+            src="https://cdn.brandfetch.io/codeium.com/w/400/h/400?c=1idyxjg0fWEyhdkPzvM"
+            alt="Windsurf"
+            width="64"
+            height="64"
+          />
+        </div>
+
+        <div class="client-logo langchain">
+          <img
+            src="https://cdn.brandfetch.io/langchain.com/w/400/h/400?c=1idyxjg0fWEyhdkPzvM"
+            alt="LangChain"
+            width="64"
+            height="64"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-comparison container">
+    <h2 class="section-title">Feature Comparison</h2>
+    <p class="section-subtitle">Everything you need, wherever you deploy</p>
+
+    <div class="comparison-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>NimbleTools Cloud</th>
+            <th>NimbleTools Runtime</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CLI-First Deployment</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>Isolated Workspaces</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>Scaleable Resources</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>MCP Client Integration</td>
+            <td class="check">✓</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>Deploy to Your Cloud (AWS/Azure/GCP)</td>
+            <td class="dash">–</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>SSO/SAML (Okta, Entra)</td>
+            <td class="dash">–</td>
+            <td class="check">✓</td>
+          </tr>
+          <tr>
+            <td>Audit Logs & Compliance</td>
+            <td>Basic</td>
+            <td>Enterprise</td>
+          </tr>
+          <tr>
+            <td>SLA & Support</td>
+            <td>Best Effort</td>
+            <td>99.9% + Dedicated</td>
+          </tr>
+          <tr>
+            <td>Enterprise Security & Compliance</td>
+            <td class="dash">–</td>
+            <td class="check">✓</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="social-proof" id="get-started">
+    <div class="container">
+      <h2 class="section-title">Get Started with the CLI</h2>
+      <p class="section-subtitle">Install once, deploy anywhere</p>
+
+      <div class="cli-install-section">
+        <div class="install-card">
+          <h3>Quick Install</h3>
+          <div class="code-block">
+            <pre><span class="code-comment"># Install the NimbleTools CLI</span>
 $ npm install -g @nimbletools/ntcli
 
 <span class="code-comment"># Verify installation</span>
@@ -219,583 +272,628 @@ $ ntcli --version
 
 <span class="code-comment"># Create your account and start deploying</span>
 $ ntcli auth signup</pre>
-                    </div>
-                    
-                    <div class="cli-links">
-                        <a href="https://github.com/NimbleBrainInc/ntcli" class="github-link">
-                            <span>📦</span>
-                            View on GitHub
-                        </a>
-                        <a href="https://docs.nimbletools.ai/getting-started" class="docs-link">
-                            <span>📖</span>
-                            CLI Documentation
-                        </a>
-                        <a href="/slack" class="slack-link">
-                            <span>💬</span>
-                            Join Slack Community
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="why-cli">
-                    <h3>Why CLI First?</h3>
-                    <ul>
-                        <li>
-                            <strong>Automation Ready</strong>
-                            <p>Integrate with your CI/CD pipelines from day one</p>
-                        </li>
-                        <li>
-                            <strong>Version Control</strong>
-                            <p>Track your MCP server configurations in git</p>
-                        </li>
-                        <li>
-                            <strong>Scriptable Deployments</strong>
-                            <p>Deploy dozens of servers with a single script</p>
-                        </li>
-                        <li>
-                            <strong>Developer Workflow</strong>
-                            <p>Stay in your terminal, no context switching</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+          </div>
 
-    <section class="cta-section container">
-        <h2>Ready for Enterprise MCP?</h2>
-        <p>Join platform teams at small to large companies who've moved MCP servers from local development to remote production with isolated workspaces, SSO, and cloud deployment.</p>
-        <div class="hero-cta">
-            <a href="#get-started" class="primary-cta">
-                <span>Install CLI (Free)</span>
-                <span>→</span>
+          <div class="cli-links">
+            <a href={externalLinks.githubNtcli} class="github-link">
+              <span>📦</span>
+              View on GitHub
             </a>
-            <a href="https://calendly.com/mat-nimblebrain/nimbletools-demo-30min" class="secondary-cta">Talk to Platform Team</a>
+            <a href={externalLinks.docsGettingStarted} class="docs-link">
+              <span>📖</span>
+              CLI Documentation
+            </a>
+            <a href={externalLinks.community} class="slack-link">
+              <span>💬</span>
+              Join Slack Community
+            </a>
+          </div>
         </div>
-    </section>
+
+        <div class="why-cli">
+          <h3>Why CLI First?</h3>
+          <ul>
+            <li>
+              <strong>Automation Ready</strong>
+              <p>Integrate with your CI/CD pipelines from day one</p>
+            </li>
+            <li>
+              <strong>Version Control</strong>
+              <p>Track your MCP server configurations in git</p>
+            </li>
+            <li>
+              <strong>Scriptable Deployments</strong>
+              <p>Deploy dozens of servers with a single script</p>
+            </li>
+            <li>
+              <strong>Developer Workflow</strong>
+              <p>Stay in your terminal, no context switching</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section container">
+    <h2>Ready for Enterprise MCP?</h2>
+    <p>
+      Join platform teams at small to large companies who've moved MCP servers
+      from local development to remote production with isolated workspaces, SSO,
+      and cloud deployment.
+    </p>
+    <div class="hero-cta">
+      <a href="#get-started" class="primary-cta">
+        <span>Install CLI (Free)</span>
+        <span>→</span>
+      </a>
+      <a href={externalLinks.schedulingLink} class="secondary-cta"
+        >Talk to Platform Team</a
+      >
+    </div>
+  </section>
 </BaseLayout>
 
 <style>
-    /* Hero Section */
-    .hero {
-        padding: 100px 0 80px;
-        text-align: center;
+  /* Hero Section */
+  .hero {
+    padding: 100px 0 80px;
+    text-align: center;
+  }
+
+  .trust-badges {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 64px;
+    opacity: 0.6;
+  }
+
+  .trust-badge {
+    font-size: 14px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Product Tiers */
+  .product-tiers {
+    padding: 80px 0;
+    background: var(--bg-secondary);
+  }
+
+  .tier-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 64px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tier-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px;
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .tier-card:hover {
+    border-color: var(--text-secondary);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .tier-card.enterprise {
+    border-color: var(--enterprise);
+  }
+
+  .tier-badge {
+    position: absolute;
+    top: -12px;
+    right: 32px;
+    background: var(--enterprise);
+    color: white;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .tier-name {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+
+  .tier-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .tier-description {
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+
+  .tier-features {
+    list-style: none;
+    margin-bottom: 32px;
+  }
+
+  .tier-features li {
+    padding: 12px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--text-primary);
+  }
+
+  .tier-features li::before {
+    content: "✓";
+    color: var(--accent);
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  .tier-cta {
+    display: block;
+    text-align: center;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .tier-cta.cloud {
+    background: var(--accent);
+    color: var(--bg-primary);
+  }
+
+  .tier-cta.cloud:hover {
+    background: var(--accent-dim);
+    transform: translateY(-1px);
+  }
+
+  .tier-cta.enterprise {
+    background: var(--enterprise);
+    color: white;
+  }
+
+  .tier-cta.enterprise:hover {
+    background: var(--enterprise-dim);
+    transform: translateY(-1px);
+  }
+
+  /* Terminal Demo */
+  .terminal-section {
+    padding: 80px 0;
+  }
+
+  .terminal-container {
+    background: var(--bg-terminal);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .terminal-header {
+    background: var(--bg-secondary);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+
+  .terminal-dot.red {
+    background: #ff5f57;
+  }
+  .terminal-dot.yellow {
+    background: #ffbd2e;
+  }
+  .terminal-dot.green {
+    background: #28ca42;
+  }
+
+  .terminal-title {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-left: auto;
+    font-family: "SF Mono", Consolas, monospace;
+  }
+
+  .terminal-body {
+    padding: 24px;
+    font-family: "SF Mono", Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 400px;
+  }
+
+  .terminal-line {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+
+  .terminal-line.command {
+    color: var(--text-primary);
+  }
+
+  .terminal-line.output {
+    color: var(--text-secondary);
+    padding-left: 0;
+  }
+
+  .terminal-line.success {
+    color: var(--accent);
+  }
+
+  .terminal-line.comment {
+    color: #6b7280;
+    font-style: italic;
+  }
+
+  .prompt {
+    color: var(--accent);
+    margin-right: 8px;
+    user-select: none;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
     }
+  }
 
-    .trust-badges {
-        display: flex;
-        gap: 48px;
-        justify-content: center;
-        align-items: center;
-        margin-top: 64px;
-        opacity: 0.6;
-    }
+  /* MCP Clients Section */
+  .mcp-clients-section {
+    padding: 80px 0;
+    background: var(--bg-secondary);
+  }
 
-    .trust-badge {
-        font-size: 14px;
-        color: var(--text-secondary);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
+  .clients-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 48px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
 
-    /* Product Tiers */
-    .product-tiers {
-        padding: 80px 0;
-        background: var(--bg-secondary);
-    }
+  .client-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
 
-    .tier-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 48px;
-        margin-top: 64px;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .client-logo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
 
-    .tier-card {
-        background: var(--bg-primary);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 48px;
-        position: relative;
-        transition: all 0.3s;
-    }
+  .compatibility-note {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
 
-    .tier-card:hover {
-        border-color: var(--text-secondary);
-        transform: translateY(-4px);
-        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-    }
+  .compatibility-note p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    font-weight: 500;
+  }
 
-    .tier-card.enterprise {
-        border-color: var(--enterprise);
-    }
+  /* Features Comparison */
+  .features-comparison {
+    padding: 80px 0;
+  }
 
-    .tier-badge {
-        position: absolute;
-        top: -12px;
-        right: 32px;
-        background: var(--enterprise);
-        color: white;
-        padding: 4px 16px;
-        border-radius: 20px;
-        font-size: 12px;
-        font-weight: 600;
-    }
+  .comparison-table {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 48px;
+  }
 
-    .tier-name {
-        font-size: 16px;
-        color: var(--text-secondary);
-        margin-bottom: 8px;
-    }
+  .comparison-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
 
-    .tier-title {
-        font-size: 28px;
-        font-weight: 700;
-        margin-bottom: 16px;
-    }
+  .comparison-table th {
+    background: var(--bg-primary);
+    padding: 24px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+  }
 
-    .tier-description {
-        color: var(--text-secondary);
-        margin-bottom: 32px;
-        line-height: 1.7;
-    }
+  .comparison-table th:first-child {
+    width: 40%;
+  }
 
-    .tier-features {
-        list-style: none;
-        margin-bottom: 32px;
-    }
+  .comparison-table td {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+  }
 
-    .tier-features li {
-        padding: 12px 0;
-        display: flex;
-        align-items: flex-start;
-        gap: 12px;
-        color: var(--text-primary);
-    }
+  .comparison-table tr:last-child td {
+    border-bottom: none;
+  }
 
-    .tier-features li::before {
-        content: "✓";
-        color: var(--accent);
-        font-weight: bold;
-        font-size: 18px;
-        line-height: 1;
-    }
+  .comparison-table .check {
+    color: var(--accent);
+    font-size: 20px;
+  }
 
-    .tier-cta {
-        display: block;
-        text-align: center;
-        padding: 12px 24px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: all 0.2s;
-    }
+  .comparison-table .dash {
+    color: var(--text-secondary);
+    font-size: 20px;
+  }
 
-    .tier-cta.cloud {
-        background: var(--accent);
-        color: var(--bg-primary);
-    }
+  /* Social Proof */
+  .social-proof {
+    padding: 80px 0;
+    background: var(--bg-secondary);
+  }
 
-    .tier-cta.cloud:hover {
-        background: var(--accent-dim);
-        transform: translateY(-1px);
-    }
+  /* CLI Install Section */
+  .cli-install-section {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 48px;
+    margin-top: 64px;
+    align-items: start;
+  }
 
-    .tier-cta.enterprise {
-        background: var(--enterprise);
-        color: white;
-    }
+  .install-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px;
+  }
 
-    .tier-cta.enterprise:hover {
-        background: var(--enterprise-dim);
-        transform: translateY(-1px);
-    }
+  .install-card h3 {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
 
-    /* Terminal Demo */
-    .terminal-section {
-        padding: 80px 0;
-    }
+  .install-card .code-block {
+    margin-bottom: 32px;
+  }
 
-    .terminal-container {
-        background: var(--bg-terminal);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    }
+  .cli-links {
+    display: flex;
+    gap: 24px;
+  }
 
-    .terminal-header {
-        background: var(--bg-secondary);
-        padding: 12px 16px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        border-bottom: 1px solid var(--border);
-    }
+  .cli-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    padding: 12px 24px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: all 0.2s;
+    font-weight: 600;
+  }
 
-    .terminal-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: var(--border);
-    }
+  .cli-links a:hover {
+    border-color: var(--accent);
+    background: var(--bg-secondary);
+  }
 
-    .terminal-dot.red { background: #ff5f57; }
-    .terminal-dot.yellow { background: #ffbd2e; }
-    .terminal-dot.green { background: #28ca42; }
+  .why-cli h3 {
+    font-size: 24px;
+    margin-bottom: 32px;
+  }
 
-    .terminal-title {
-        color: var(--text-secondary);
-        font-size: 13px;
-        margin-left: auto;
-        font-family: 'SF Mono', Consolas, monospace;
-    }
+  .why-cli ul {
+    list-style: none;
+  }
 
-    .terminal-body {
-        padding: 24px;
-        font-family: 'SF Mono', Consolas, monospace;
-        font-size: 14px;
-        line-height: 1.6;
-        min-height: 400px;
-    }
+  .why-cli li {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
 
-    .terminal-line {
-        margin-bottom: 16px;
-        display: flex;
-        align-items: flex-start;
-        opacity: 0;
-        animation: fadeIn 0.5s forwards;
-    }
+  .why-cli li:last-child {
+    border-bottom: none;
+  }
 
-    .terminal-line.command {
-        color: var(--text-primary);
-    }
+  .why-cli li strong {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+  }
 
-    .terminal-line.output {
-        color: var(--text-secondary);
-        padding-left: 0;
-    }
+  .why-cli li p {
+    color: var(--text-secondary);
+    font-size: 14px;
+  }
 
-    .terminal-line.success {
-        color: var(--accent);
-    }
+  /* CTA Section */
+  .cta-section {
+    padding: 100px 0;
+    text-align: center;
+  }
 
-    .terminal-line.comment {
-        color: #6b7280;
-        font-style: italic;
-    }
+  .cta-section h2 {
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
 
-    .prompt {
-        color: var(--accent);
-        margin-right: 8px;
-        user-select: none;
-    }
+  .cta-section p {
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin-bottom: 48px;
+  }
 
-    @keyframes fadeIn {
-        to { opacity: 1; }
-    }
-
-    /* MCP Clients Section */
-    .mcp-clients-section {
-        padding: 80px 0;
-        background: var(--bg-secondary);
-    }
-
-    .clients-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 48px;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        flex-wrap: wrap;
-        gap: 16px;
-    }
-
-    .client-logo {
-        width: 64px;
-        height: 64px;
-        border-radius: 8px;
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        transition: all 0.3s;
-        cursor: pointer;
-    }
-
-    .client-logo:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-    }
-
-    .compatibility-note {
-        text-align: center;
-        margin-top: 48px;
-        padding-top: 32px;
-        border-top: 1px solid var(--border);
-    }
-
-    .compatibility-note p {
-        color: var(--text-secondary);
-        font-size: 15px;
-        font-weight: 500;
-    }
-
-    /* Features Comparison */
-    .features-comparison {
-        padding: 80px 0;
-    }
-
-    .comparison-table {
-        background: var(--bg-secondary);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        overflow: hidden;
-        margin-top: 48px;
-    }
-
-    .comparison-table table {
-        width: 100%;
-        border-collapse: collapse;
-    }
-
-    .comparison-table th {
-        background: var(--bg-primary);
-        padding: 24px;
-        text-align: left;
-        font-weight: 600;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .comparison-table th:first-child {
-        width: 40%;
-    }
-
-    .comparison-table td {
-        padding: 20px 24px;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .comparison-table tr:last-child td {
-        border-bottom: none;
-    }
-
-    .comparison-table .check {
-        color: var(--accent);
-        font-size: 20px;
-    }
-
-    .comparison-table .dash {
-        color: var(--text-secondary);
-        font-size: 20px;
-    }
-
-    /* Social Proof */
-    .social-proof {
-        padding: 80px 0;
-        background: var(--bg-secondary);
-    }
-
-    /* CLI Install Section */
+  /* Responsive */
+  @media (max-width: 768px) {
+    .tier-grid,
     .cli-install-section {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr;
-        gap: 48px;
-        margin-top: 64px;
-        align-items: start;
+      grid-template-columns: 1fr;
     }
 
-    .install-card {
-        background: var(--bg-primary);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        padding: 48px;
+    .journey-path {
+      flex-direction: column;
+      gap: 32px;
     }
 
-    .install-card h3 {
-        font-size: 24px;
-        margin-bottom: 24px;
+    .journey-path::before {
+      display: none;
     }
 
-    .install-card .code-block {
-        margin-bottom: 32px;
+    .journey-arrow {
+      transform: rotate(90deg);
     }
 
     .cli-links {
-        display: flex;
-        gap: 24px;
+      flex-direction: column;
     }
-
-    .cli-links a {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        color: var(--text-primary);
-        text-decoration: none;
-        padding: 12px 24px;
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        transition: all 0.2s;
-        font-weight: 600;
-    }
-
-    .cli-links a:hover {
-        border-color: var(--accent);
-        background: var(--bg-secondary);
-    }
-
-    .why-cli h3 {
-        font-size: 24px;
-        margin-bottom: 32px;
-    }
-
-    .why-cli ul {
-        list-style: none;
-    }
-
-    .why-cli li {
-        margin-bottom: 24px;
-        padding-bottom: 24px;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .why-cli li:last-child {
-        border-bottom: none;
-    }
-
-    .why-cli li strong {
-        display: block;
-        font-size: 16px;
-        margin-bottom: 8px;
-        color: var(--text-primary);
-    }
-
-    .why-cli li p {
-        color: var(--text-secondary);
-        font-size: 14px;
-    }
-
-    /* CTA Section */
-    .cta-section {
-        padding: 100px 0;
-        text-align: center;
-    }
-
-    .cta-section h2 {
-        font-size: 48px;
-        margin-bottom: 24px;
-    }
-
-    .cta-section p {
-        font-size: 20px;
-        color: var(--text-secondary);
-        margin-bottom: 48px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-        .tier-grid,
-        .cli-install-section {
-            grid-template-columns: 1fr;
-        }
-
-        .journey-path {
-            flex-direction: column;
-            gap: 32px;
-        }
-
-        .journey-path::before {
-            display: none;
-        }
-
-        .journey-arrow {
-            transform: rotate(90deg);
-        }
-
-        .cli-links {
-            flex-direction: column;
-        }
-    }
+  }
 </style>
 
 <script is:inline>
-    // Terminal animation showing the journey
-    const terminalLines = [
-        { type: 'comment', text: '# Welcome to NimbleTools - let\'s deploy your first MCP server', delay: 0 },
-        { type: 'command', text: 'ntcli auth signup', delay: 500 },
-        { type: 'output', text: 'Enter email: developer@example.com', delay: 1000 },
-        { type: 'output', text: 'Enter password: ********', delay: 1300 },
-        { type: 'success', text: '✓ Account created successfully!', delay: 1700 },
-        { type: 'output', text: '', delay: 1900 },
-        
-        { type: 'comment', text: '# Create a workspace for your project', delay: 2100 },
-        { type: 'command', text: 'ntcli workspace create my-ai-assistant', delay: 2600 },
-        { type: 'success', text: '✓ Workspace \'my-ai-assistant\' created', delay: 3100 },
-        { type: 'success', text: '✓ Switched to workspace \'my-ai-assistant\'', delay: 3300 },
-        { type: 'output', text: '', delay: 3500 },
-        
-        { type: 'comment', text: '# Deploy your first MCP server', delay: 3700 },
-        { type: 'command', text: 'ntcli server deploy github-mcp', delay: 4200 },
-        { type: 'output', text: 'Pulling server image...', delay: 4700 },
-        { type: 'output', text: 'Creating isolated environment...', delay: 5200 },
-        { type: 'output', text: 'Configuring endpoints...', delay: 5700 },
-        { type: 'success', text: '✓ Server deployed successfully', delay: 6200 },
-        { type: 'output', text: 'Server ID: srv_xyz789', delay: 6400 },
-        { type: 'output', text: 'Status: Running', delay: 6500 },
-        { type: 'output', text: 'Endpoint: https://my-ai-assistant.nimbletools.com/servers/srv_xyz789', delay: 6600 },
-        { type: 'output', text: '', delay: 6800 },
-        
-        { type: 'comment', text: '# Need more power? Scale up instantly', delay: 7300 },
-        { type: 'command', text: 'ntcli server scale srv_xyz789 4', delay: 7800 },
-        { type: 'output', text: 'Scaling server to 4 instances...', delay: 8300 },
-        { type: 'success', text: '✓ Server scaled successfully', delay: 9000 },
-        { type: 'output', text: 'Instances: 4/4 running', delay: 9200 },
-        { type: 'output', text: 'Load balancer: Active', delay: 9300 },
-        { type: 'output', text: '', delay: 9500 },
-        
-        { type: 'comment', text: '# Your MCP server is ready! 🚀', delay: 10000 },
-    ];
+  // Terminal animation showing the journey
+  const terminalLines = [
+    {
+      type: "comment",
+      text: "# Welcome to NimbleTools - let's deploy your first MCP server",
+      delay: 0,
+    },
+    { type: "command", text: "ntcli auth signup", delay: 500 },
+    { type: "output", text: "Enter email: developer@example.com", delay: 1000 },
+    { type: "output", text: "Enter password: ********", delay: 1300 },
+    { type: "success", text: "✓ Account created successfully!", delay: 1700 },
+    { type: "output", text: "", delay: 1900 },
 
-    function animateTerminal() {
-        const terminal = document.getElementById('terminal');
-        if (!terminal) return;
-        
-        terminal.innerHTML = '';
-        
-        terminalLines.forEach((line, index) => {
-            setTimeout(() => {
-                const lineElement = document.createElement('div');
-                lineElement.className = `terminal-line ${line.type}`;
-                lineElement.style.animationDelay = '0s';
-                
-                if (line.type === 'command') {
-                    lineElement.innerHTML = `<span class="prompt">$</span> ${line.text}`;
-                } else {
-                    lineElement.textContent = line.text;
-                }
-                
-                terminal.appendChild(lineElement);
-                terminal.scrollTop = terminal.scrollHeight;
-            }, line.delay);
-        });
-    }
+    {
+      type: "comment",
+      text: "# Create a workspace for your project",
+      delay: 2100,
+    },
+    {
+      type: "command",
+      text: "ntcli workspace create my-ai-assistant",
+      delay: 2600,
+    },
+    {
+      type: "success",
+      text: "✓ Workspace 'my-ai-assistant' created",
+      delay: 3100,
+    },
+    {
+      type: "success",
+      text: "✓ Switched to workspace 'my-ai-assistant'",
+      delay: 3300,
+    },
+    { type: "output", text: "", delay: 3500 },
 
-    // Start animation when terminal is in view
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateTerminal();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
+    { type: "comment", text: "# Deploy your first MCP server", delay: 3700 },
+    { type: "command", text: "ntcli server deploy github-mcp", delay: 4200 },
+    { type: "output", text: "Pulling server image...", delay: 4700 },
+    { type: "output", text: "Creating isolated environment...", delay: 5200 },
+    { type: "output", text: "Configuring endpoints...", delay: 5700 },
+    { type: "success", text: "✓ Server deployed successfully", delay: 6200 },
+    { type: "output", text: "Server ID: srv_xyz789", delay: 6400 },
+    { type: "output", text: "Status: Running", delay: 6500 },
+    {
+      type: "output",
+      text: "Endpoint: https://my-ai-assistant.nimbletools.com/servers/srv_xyz789",
+      delay: 6600,
+    },
+    { type: "output", text: "", delay: 6800 },
 
-    const terminalContainer = document.querySelector('.terminal-container');
-    if (terminalContainer) {
-        observer.observe(terminalContainer);
-    }
+    {
+      type: "comment",
+      text: "# Need more power? Scale up instantly",
+      delay: 7300,
+    },
+    { type: "command", text: "ntcli server scale srv_xyz789 4", delay: 7800 },
+    { type: "output", text: "Scaling server to 4 instances...", delay: 8300 },
+    { type: "success", text: "✓ Server scaled successfully", delay: 9000 },
+    { type: "output", text: "Instances: 4/4 running", delay: 9200 },
+    { type: "output", text: "Load balancer: Active", delay: 9300 },
+    { type: "output", text: "", delay: 9500 },
+
+    { type: "comment", text: "# Your MCP server is ready! 🚀", delay: 10000 },
+  ];
+
+  function animateTerminal() {
+    const terminal = document.getElementById("terminal");
+    if (!terminal) return;
+
+    terminal.innerHTML = "";
+
+    terminalLines.forEach((line, index) => {
+      setTimeout(() => {
+        const lineElement = document.createElement("div");
+        lineElement.className = `terminal-line ${line.type}`;
+        lineElement.style.animationDelay = "0s";
+
+        if (line.type === "command") {
+          lineElement.innerHTML = `<span class="prompt">$</span> ${line.text}`;
+        } else {
+          lineElement.textContent = line.text;
+        }
+
+        terminal.appendChild(lineElement);
+        terminal.scrollTop = terminal.scrollHeight;
+      }, line.delay);
+    });
+  }
+
+  // Start animation when terminal is in view
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateTerminal();
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  const terminalContainer = document.querySelector(".terminal-container");
+  if (terminalContainer) {
+    observer.observe(terminalContainer);
+  }
 </script>
