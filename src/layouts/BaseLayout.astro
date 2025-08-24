@@ -1,6 +1,7 @@
 ---
 import nimbleToolsLogo from "../assets/images/nimbletools-logo-n-transparent.png";
 import { externalLinks } from "../config/externalLinks.js";
+import "../styles/styles.css";
 
 export interface Props {
   title: string;
@@ -113,14 +114,23 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <div class="nav-links">
           <a href="/" class={currentPage === "home" ? "active" : ""}>Home</a>
           <a
+            href="/how-it-works"
+            class={currentPage === "how-it-works" ? "active" : ""}
+            >How It Works</a
+          >
+          <a href="/pricing" class={currentPage === "pricing" ? "active" : ""}
+            >Pricing</a
+          >
+          <a
             href="/custom-mcp-servers"
             class={currentPage === "custom-mcp-servers" ? "active" : ""}
-            >Custom MCP Servers</a
+            >Custom Development</a
           >
           <a href={externalLinks.docs}>Docs</a>
+          <a href={externalLinks.schedulingLink}>Demo</a>
         </div>
         <div class="nav-cta">
-          <a href="/#get-started" class="sign-in-btn">Install CLI</a>
+          <a href="/#get-started" class="outline-btn">Get Started</a>
           {
             /* <a href="https://calendly.com/mat-nimblebrain/nimbletools-demo-30min" class="sales-btn">Talk to Sales</a> */
           }
@@ -136,7 +146,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <div class="container">
         <div class="footer-content">
           <div class="footer-brand">
-            <h3>nimbletools</h3>
+            <div class="footer-logo">
+              <img
+                src={nimbleToolsLogo.src}
+                alt="NimbleTools Logo"
+                width="24"
+                height="24"
+              />
+            </div>
             <p>
               Deploy and scale MCP servers instantly across any cloud
               infrastructure.
@@ -254,6 +271,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   :root {
     --bg-primary: #0a0a0a;
     --bg-secondary: #111111;
+    --bg-tertiary: linear-gradient(
+      135deg,
+      #0a0a0a 0%,
+      #1a2f1f 50%,
+      #0a0a0a 100%
+    );
     --bg-terminal: #000000;
     --text-primary: #e7e7e7;
     --text-secondary: #a0a0a0;
@@ -349,7 +372,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     align-items: center;
   }
 
-  .sign-in-btn {
+  .outline-btn {
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    border: 1px solid var(--text-secondary);
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+    font-size: 14px;
+  }
+
+  .outline-btn:hover {
+    border-color: var(--accent);
+    background: var(--bg-primary);
     color: var(--text-primary);
   }
 
@@ -417,20 +454,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   }
 
   .secondary-cta {
-    background: transparent;
+    background: var(--bg-secondary);
     color: var(--text-primary);
     padding: 14px 32px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
     font-size: 16px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--text-secondary);
     transition: all 0.2s;
   }
 
   .secondary-cta:hover {
-    border-color: var(--text-secondary);
-    background: var(--bg-secondary);
+    border-color: var(--accent);
+    background: var(--bg-primary);
+    color: var(--text-primary);
   }
 
   .section-title {
@@ -450,6 +488,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   /* Footer */
   footer {
     padding: 48px 0;
+    background: #0d1117;
     border-top: 1px solid var(--border);
   }
 
@@ -460,10 +499,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     margin-bottom: 48px;
   }
 
-  .footer-brand h3 {
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .footer-logo span {
     color: var(--accent);
     font-size: 20px;
-    margin-bottom: 16px;
+    font-weight: 700;
   }
 
   .footer-brand p {

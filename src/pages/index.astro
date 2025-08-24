@@ -1,6 +1,7 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import InstallCLI from "../components/InstallCLI.astro";
 import { externalLinks } from "../config/externalLinks.js";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
@@ -9,114 +10,40 @@ import { externalLinks } from "../config/externalLinks.js";
   keywords="MCP, Model Context Protocol, MCP servers, enterprise AI, platform engineering, SSO, BYOC, compliance, DevOps, infrastructure orchestration"
   currentPage="home"
 >
-  <section class="hero container">
-    <h1>Enterprise MCP Server<br />Infrastructure & Orchestration</h1>
-    <p class="subtitle">
-      Deploy remote MCP servers instantly. Scale from individual workloads to
-      enterprise production without infrastructure headaches.
-    </p>
-    <div class="hero-cta">
-      <a href="#get-started" class="primary-cta">
-        <span>Start Building</span>
-        <span>→</span>
-      </a>
-      <a href={externalLinks.schedulingLink} class="secondary-cta"
-        >Talk to Platform Team</a
-      >
-    </div>
-
-    <div class="trust-badges">
-      <div class="trust-badge">
-        <span>🏢</span>
-        <span>SSO, Audit Logs & SLAs</span>
-      </div>
-      <div class="trust-badge">
-        <span>☁️</span>
-        <span>AWS, Azure & GCP Ready</span>
-      </div>
-      <div class="trust-badge">
-        <span>🔐</span>
-        <span>BYOC & Enterprise Security</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="product-tiers">
+  <section class="hero section-bg-tertiary">
     <div class="container">
-      <a href="#deploy"></a>
-      <h2 class="section-title">Infrastructure That Scales With You</h2>
-      <p class="section-subtitle">
-        Start with our managed cloud, graduate to your own infrastructure when
-        business demands it.
+      <h1>
+        Deploy MCP Servers in Minutes<br /> With Enterprise Security and Scale.
+      </h1>
+      <p class="subtitle">
+        Spin up in minutes and scale to production — run in our cloud or yours,
+        with secrets isolated plus SSO and audit built in.
       </p>
+      <div class="cta-block inline">
+        <InstallCLI />
+        <a href={externalLinks.schedulingLink} class="secondary-cta"
+          >Request a Demo</a
+        >
+      </div>
 
-      <div class="tier-grid">
-        <div class="tier-card">
-          <div class="tier-name">INDIVIDUAL & TEAMS</div>
-          <h3 class="tier-title">NimbleTools Cloud</h3>
-          <p class="tier-description">
-            Fully managed MCP runtime for individuals and small teams. Perfect
-            for proving value with MCP servers or early-stage development.
-          </p>
-
-          <ul class="tier-features">
-            <li>CLI-first deployment (<10 minutes)</li>
-            <li>Isolated workspaces & scoped tokens</li>
-            <li>Scaleable resources (cost tracks usage)</li>
-            <li>Built-in secret management</li>
-            <li>MCP client integration</li>
-            <li>5,000 free calls/month</li>
-          </ul>
-
-          <a href="#get-started" class="tier-cta cloud">Install CLI (Free)</a>
+      <div class="trust-badges">
+        <div class="trust-badge">
+          <span>🏢</span>
+          <span>SSO, Audit Logs & SLAs</span>
         </div>
-
-        <div class="tier-card enterprise">
-          <div class="tier-badge">ENTERPRISE READY</div>
-          <div class="tier-name">ENTERPRISE</div>
-          <h3 class="tier-title">NimbleTools Runtime</h3>
-          <p class="tier-description">
-            BYOC deployment on AWS, Azure, or GCP. Full compliance, audit logs,
-            SSO integration, and SLAs for enterprise production.
-          </p>
-
-          <ul class="tier-features">
-            <li>Deploy to AWS, Azure, or GCP</li>
-            <li>SSO/SAML (Okta, Entra, etc.)</li>
-            <li>Audit logs & compliance reporting</li>
-            <li>Full control & customization</li>
-            <li>99.9% uptime SLA</li>
-            <li>Dedicated platform support</li>
-          </ul>
-
-          <a href={externalLinks.schedulingLink} class="tier-cta enterprise"
-            >Talk to Platform Team</a
-          >
+        <div class="trust-badge">
+          <span>☁️</span>
+          <span>AWS, Azure & GCP Ready</span>
+        </div>
+        <div class="trust-badge">
+          <span>🔐</span>
+          <span>BYOC & Enterprise Security</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="terminal-section container" id="demo">
-    <h2 class="section-title">See It In Action</h2>
-    <p class="section-subtitle">
-      Deploy and scale MCP servers with simple commands
-    </p>
-
-    <div class="terminal-container">
-      <div class="terminal-header">
-        <div class="terminal-dot red"></div>
-        <div class="terminal-dot yellow"></div>
-        <div class="terminal-dot green"></div>
-        <span class="terminal-title">nimble tools journey</span>
-      </div>
-      <div class="terminal-body" id="terminal">
-        <!-- Terminal content will be dynamically added -->
-      </div>
-    </div>
-  </section>
-
-  <section class="mcp-clients-section">
+  <section class="mcp-clients-section section-bg-primary">
     <div class="container">
       <h2 class="section-title">Works With Your Favorite MCP Clients</h2>
       <p class="section-subtitle">
@@ -190,71 +117,7 @@ import { externalLinks } from "../config/externalLinks.js";
     </div>
   </section>
 
-  <section class="features-comparison container">
-    <h2 class="section-title">Feature Comparison</h2>
-    <p class="section-subtitle">Everything you need, wherever you deploy</p>
-
-    <div class="comparison-table">
-      <table>
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th>NimbleTools Cloud</th>
-            <th>NimbleTools Runtime</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>CLI-First Deployment</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Isolated Workspaces</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Scaleable Resources</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>MCP Client Integration</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Deploy to Your Cloud (AWS/Azure/GCP)</td>
-            <td class="dash">–</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>SSO/SAML (Okta, Entra)</td>
-            <td class="dash">–</td>
-            <td class="check">✓</td>
-          </tr>
-          <tr>
-            <td>Audit Logs & Compliance</td>
-            <td>Basic</td>
-            <td>Enterprise</td>
-          </tr>
-          <tr>
-            <td>SLA & Support</td>
-            <td>Best Effort</td>
-            <td>99.9% + Dedicated</td>
-          </tr>
-          <tr>
-            <td>Enterprise Security & Compliance</td>
-            <td class="dash">–</td>
-            <td class="check">✓</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="social-proof" id="get-started">
+  <section class="social-proof section-bg-tertiary" id="get-started">
     <div class="container">
       <h2 class="section-title">Get Started with the CLI</h2>
       <p class="section-subtitle">Install once, deploy anywhere</p>
@@ -315,262 +178,566 @@ $ ntcli auth signup</pre>
     </div>
   </section>
 
-  <section class="cta-section container">
-    <h2>Ready for Enterprise MCP?</h2>
-    <p>
-      Join platform teams at small to large companies who've moved MCP servers
-      from local development to remote production with isolated workspaces, SSO,
-      and cloud deployment.
-    </p>
-    <div class="hero-cta">
-      <a href="#get-started" class="primary-cta">
-        <span>Install CLI (Free)</span>
-        <span>→</span>
-      </a>
-      <a href={externalLinks.schedulingLink} class="secondary-cta"
-        >Talk to Platform Team</a
-      >
+  <section class="pricing-comparison section-bg-primary">
+    <div class="container">
+      <h2 class="section-title">Simple, Transparent Pricing</h2>
+      <p class="section-subtitle">Start free, scale to enterprise when ready</p>
+
+      <div class="pricing-grid">
+        <div class="pricing-card community">
+          <div class="pricing-header">
+            <h3>Community</h3>
+            <div class="price">Free</div>
+            <p class="price-description">Perfect for individual developers</p>
+          </div>
+          <ul class="pricing-features">
+            <li>✓ CLI deployment</li>
+            <li>✓ Community MCP servers</li>
+            <li>✓ Basic monitoring</li>
+            <li>✓ Community support</li>
+            <li>✓ 1 workspace</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card team featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-header">
+            <h3>Team</h3>
+            <div class="price">$199<span class="price-unit">/month</span></div>
+            <p class="price-description">
+              For teams with higher MCP call volume
+            </p>
+          </div>
+          <ul class="pricing-features">
+            <li>✓ Everything in Community</li>
+            <li>✓ Multiple workspaces</li>
+            <li>✓ Team collaboration</li>
+            <li>✓ Advanced monitoring</li>
+            <li>✓ Email support</li>
+          </ul>
+        </div>
+
+        <div class="pricing-card enterprise">
+          <div class="pricing-header">
+            <h3>Enterprise</h3>
+            <div class="price">Custom</div>
+            <p class="price-description">For large organizations</p>
+          </div>
+          <ul class="pricing-features">
+            <li>✓ Everything in Team</li>
+            <li>✓ BYOC deployment</li>
+            <li>✓ SSO & compliance</li>
+            <li>✓ 99.9% SLA</li>
+            <li>✓ Dedicated support</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pricing-footer">
+        <p>
+          Need more details?
+          <a href="/pricing" class="pricing-link"
+            >View full pricing comparison →</a
+          >
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section section-bg-secondary">
+    <div class="container">
+      <h2>Start Free. Scale to Enterprise.</h2>
+      <p>
+        Deploy your first MCP server in under 5 minutes with our CLI. When
+        you're ready to scale, upgrade to Team or Enterprise with one command.
+      </p>
+
+      <div class="cta-benefits">
+        <div class="cta-benefit">
+          <span class="benefit-icon">⚡</span>
+          <span>Deploy in minutes</span>
+        </div>
+        <div class="cta-benefit">
+          <span class="benefit-icon">🆓</span>
+          <span>Start completely free</span>
+        </div>
+        <div class="cta-benefit">
+          <span class="benefit-icon">📈</span>
+          <span>Scale when you need it</span>
+        </div>
+      </div>
+
+      <div class="hero-cta">
+        <a href="#get-started" class="primary-cta">
+          <span>Get Started Free</span>
+          <span>→</span>
+        </a>
+        <a href={externalLinks.schedulingLink} class="secondary-cta"
+          >Talk to Sales</a
+        >
+      </div>
+
+      <div class="cta-note">
+        No credit card required • Free tier includes everything to get started
+      </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  /* Hero Section */
-  .hero {
-    padding: 100px 0 80px;
-    text-align: center;
+  /* Hero Section - specific styles only */
+
+  .cta-block {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 16px;
   }
 
-  .trust-badges {
-    display: flex;
-    gap: 48px;
+  .cta-block.inline {
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    margin-top: 64px;
-    opacity: 0.6;
+    gap: 24px;
   }
 
-  .trust-badge {
-    font-size: 14px;
-    color: var(--text-secondary);
+
+  /* Problem-Solution Section */
+  .problem-solution {
+    padding: 80px 0;
+    background: var(--bg-primary);
+  }
+
+  .problem-solution-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+  }
+
+  .problem-side,
+  .solution-side {
     display: flex;
-    align-items: center;
-    gap: 8px;
+    flex-direction: column;
+    height: 100%;
   }
 
-  /* Product Tiers */
-  .product-tiers {
+  .problem-side h2 {
+    color: #ff6b6b;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+
+  .solution-side h2 {
+    color: var(--accent);
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.2;
+  }
+
+  .problem-solution p {
+    color: var(--text-secondary);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+
+  .problem-list,
+  .solution-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .problem-list li,
+  .solution-list li {
+    padding: 16px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .problem-list li:last-child,
+  .solution-list li:last-child {
+    border-bottom: none;
+  }
+
+  .problem-list li {
+    color: var(--text-primary);
+  }
+
+  .solution-list li {
+    color: var(--text-primary);
+  }
+
+  /* Problem-Solution Flow Section */
+  .problem-solution-flow {
+    padding: 80px 0;
+    background: var(--bg-primary);
+  }
+
+  .flow-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 48px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .flow-section {
+    min-height: 400px;
+  }
+
+  .flow-header {
+    margin-bottom: 32px;
+  }
+
+  .flow-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+
+  .problem-badge {
+    background: rgba(255, 107, 107, 0.15);
+    color: #ff6b6b;
+    border: 1px solid #ff6b6b;
+  }
+
+  .solution-badge {
+    background: rgba(0, 255, 136, 0.15);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+
+  .flow-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 0;
+    line-height: 1.2;
+  }
+
+  .problem-section h2 {
+    color: #ff6b6b;
+  }
+
+  .solution-section h2 {
+    color: var(--accent);
+  }
+
+  .flow-points {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .flow-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .point-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .point-content h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .problem-section .point-content h4 {
+    color: #ff6b6b;
+  }
+
+  .solution-section .point-content h4 {
+    color: var(--accent);
+  }
+
+  .point-content p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .flow-transition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 200px;
+  }
+
+  .flow-arrow {
+    font-size: 32px;
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-weight: bold;
+  }
+
+  .transition-text {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-style: italic;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    white-space: nowrap;
+  }
+
+  /* Demo Section */
+  .demo-section {
     padding: 80px 0;
     background: var(--bg-secondary);
   }
 
-  .tier-grid {
+  .demo-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    margin-top: 64px;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
   }
 
-  .tier-card {
+  .demo-card {
     background: var(--bg-primary);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 48px;
-    position: relative;
+    padding: 32px;
     transition: all 0.3s;
   }
 
-  .tier-card:hover {
+  .demo-card:hover {
     border-color: var(--text-secondary);
     transform: translateY(-4px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   }
 
-  .tier-card.enterprise {
-    border-color: var(--enterprise);
+  .demo-card.featured {
+    border-color: var(--accent);
   }
 
-  .tier-badge {
-    position: absolute;
-    top: -12px;
-    right: 32px;
-    background: var(--enterprise);
-    color: white;
-    padding: 4px 16px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-  }
-
-  .tier-name {
-    font-size: 16px;
-    color: var(--text-secondary);
-    margin-bottom: 8px;
-  }
-
-  .tier-title {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 16px;
-  }
-
-  .tier-description {
-    color: var(--text-secondary);
-    margin-bottom: 32px;
-    line-height: 1.7;
-  }
-
-  .tier-features {
-    list-style: none;
-    margin-bottom: 32px;
-  }
-
-  .tier-features li {
-    padding: 12px 0;
+  .demo-header {
     display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    color: var(--text-primary);
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
   }
 
-  .tier-features li::before {
-    content: "✓";
-    color: var(--accent);
-    font-weight: bold;
-    font-size: 18px;
+  .demo-icon {
+    font-size: 32px;
     line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
   }
 
-  .tier-cta {
-    display: block;
+  .demo-icon img {
+    border-radius: 6px;
+  }
+
+  .demo-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .demo-content p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .demo-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .action-tag {
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--accent);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+  }
+
+  .demo-cta {
     text-align: center;
-    padding: 12px 24px;
+    margin-top: 64px;
+    padding: 48px 32px;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+  }
+
+  .demo-cta p {
+    color: var(--text-secondary);
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+
+  .demo-btn {
+    background: var(--accent);
+    color: var(--bg-primary);
+    padding: 12px 32px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
     transition: all 0.2s;
+    display: inline-block;
   }
 
-  .tier-cta.cloud {
-    background: var(--accent);
-    color: var(--bg-primary);
-  }
-
-  .tier-cta.cloud:hover {
+  .demo-btn:hover {
     background: var(--accent-dim);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
   }
 
-  .tier-cta.enterprise {
-    background: var(--enterprise);
-    color: white;
-  }
-
-  .tier-cta.enterprise:hover {
-    background: var(--enterprise-dim);
-    transform: translateY(-1px);
-  }
-
-  /* Terminal Demo */
-  .terminal-section {
+  /* Enterprise Workspaces */
+  .enterprise-workspaces {
     padding: 80px 0;
-  }
-
-  .terminal-container {
-    background: var(--bg-terminal);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  }
-
-  .terminal-header {
     background: var(--bg-secondary);
-    padding: 12px 16px;
+  }
+
+  .workspaces-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .workspace-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.3s;
+  }
+
+  .workspace-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .workspace-header {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 8px;
+    text-align: center;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
     border-bottom: 1px solid var(--border);
   }
 
-  .terminal-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--border);
-  }
-
-  .terminal-dot.red {
-    background: #ff5f57;
-  }
-  .terminal-dot.yellow {
-    background: #ffbd2e;
-  }
-  .terminal-dot.green {
-    background: #28ca42;
-  }
-
-  .terminal-title {
-    color: var(--text-secondary);
-    font-size: 13px;
-    margin-left: auto;
-    font-family: "SF Mono", Consolas, monospace;
-  }
-
-  .terminal-body {
-    padding: 24px;
-    font-family: "SF Mono", Consolas, monospace;
-    font-size: 14px;
-    line-height: 1.6;
-    min-height: 400px;
-  }
-
-  .terminal-line {
+  .workspace-icon {
+    font-size: 48px;
     margin-bottom: 16px;
-    display: flex;
-    align-items: flex-start;
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
   }
 
-  .terminal-line.command {
+  .workspace-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .workspace-team {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .workspace-tools {
+    margin-bottom: 24px;
+  }
+
+  .tool-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tool-item:last-child {
+    border-bottom: none;
+  }
+
+  .tool-item img {
+    border-radius: 4px;
+  }
+
+  .tool-icon {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .workspace-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  .workspace-benefits {
+    margin-top: 80px;
+    text-align: center;
+  }
+
+  .workspace-benefits h3 {
+    font-size: 32px;
+    margin-bottom: 48px;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .benefit-item {
+    text-align: center;
+  }
+
+  .benefit-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .benefit-item h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
     color: var(--text-primary);
   }
 
-  .terminal-line.output {
+  .benefit-item p {
     color: var(--text-secondary);
-    padding-left: 0;
+    line-height: 1.6;
+    font-size: 14px;
   }
 
-  .terminal-line.success {
-    color: var(--accent);
-  }
-
-  .terminal-line.comment {
-    color: #6b7280;
-    font-style: italic;
-  }
-
-  .prompt {
-    color: var(--accent);
-    margin-right: 8px;
-    user-select: none;
-  }
-
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
-
-  /* MCP Clients Section */
-  .mcp-clients-section {
-    padding: 80px 0;
-    background: var(--bg-secondary);
-  }
+  /* MCP Clients Section - specific styles only */
 
   .clients-row {
     display: flex;
@@ -612,60 +779,126 @@ $ ntcli auth signup</pre>
     font-weight: 500;
   }
 
-  /* Features Comparison */
-  .features-comparison {
-    padding: 80px 0;
+  /* Pricing Section - specific styles only */
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .comparison-table {
+  .pricing-card {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    margin-top: 48px;
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+    transition: all 0.3s;
+    text-align: center;
   }
 
-  .comparison-table table {
-    width: 100%;
-    border-collapse: collapse;
+  .pricing-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   }
 
-  .comparison-table th {
-    background: var(--bg-primary);
-    padding: 24px;
-    text-align: left;
+  .pricing-card.featured {
+    border-color: var(--accent);
+    transform: scale(1.05);
+  }
+
+  .pricing-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--bg-primary);
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 12px;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .pricing-header {
+    margin-bottom: 32px;
+  }
+
+  .pricing-card h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .price {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+
+  .price-unit {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  .price-description {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .pricing-features {
+    list-style: none;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+  }
+
+  .pricing-features li {
+    padding: 12px 0;
     border-bottom: 1px solid var(--border);
+    color: var(--text-primary);
+    font-size: 15px;
   }
 
-  .comparison-table th:first-child {
-    width: 40%;
-  }
-
-  .comparison-table td {
-    padding: 20px 24px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .comparison-table tr:last-child td {
+  .pricing-features li:last-child {
     border-bottom: none;
   }
 
-  .comparison-table .check {
-    color: var(--accent);
-    font-size: 20px;
+  .pricing-footer {
+    text-align: center;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
   }
 
-  .comparison-table .dash {
+  .pricing-footer p {
     color: var(--text-secondary);
-    font-size: 20px;
+    font-size: 16px;
+    margin: 0;
   }
 
-  /* Social Proof */
-  .social-proof {
-    padding: 80px 0;
-    background: var(--bg-secondary);
+  .pricing-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
   }
+
+  .pricing-link:hover {
+    text-decoration: underline;
+  }
+
+  /* CLI Section - specific styles only */
 
   /* CLI Install Section */
   .cli-install-section {
@@ -746,154 +979,95 @@ $ ntcli auth signup</pre>
     font-size: 14px;
   }
 
-  /* CTA Section */
-  .cta-section {
-    padding: 100px 0;
-    text-align: center;
+  /* CTA Section - specific styles only */
+
+  .cta-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    margin-bottom: 40px;
   }
 
-  .cta-section h2 {
-    font-size: 48px;
-    margin-bottom: 24px;
+  .cta-benefit {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+    font-weight: 600;
   }
 
-  .cta-section p {
+  .benefit-icon {
     font-size: 20px;
+  }
+
+  .cta-note {
+    font-size: 14px;
     color: var(--text-secondary);
-    margin-bottom: 48px;
+    margin-top: 16px;
+    font-style: italic;
   }
 
   /* Responsive */
   @media (max-width: 768px) {
-    .tier-grid,
-    .cli-install-section {
+    .cli-install-section,
+    .problem-solution-grid,
+    .flow-grid,
+    .workspaces-grid,
+    .benefits-grid {
       grid-template-columns: 1fr;
     }
 
-    .journey-path {
-      flex-direction: column;
+    .problem-solution-grid {
+      gap: 48px;
+    }
+
+    .problem-side h2,
+    .solution-side h2 {
+      font-size: 24px;
+    }
+
+    .flow-grid {
       gap: 32px;
     }
-
-    .journey-path::before {
-      display: none;
+    .flow-transition {
+      min-height: auto;
+    }
+    .flow-arrow {
+      transform: rotate(90deg);
+    }
+    .transition-text {
+      writing-mode: horizontal-tb;
+      text-orientation: initial;
     }
 
-    .journey-arrow {
-      transform: rotate(90deg);
+    .workspace-benefits h3 {
+      font-size: 24px;
+    }
+
+    .cta-block.inline {
+      flex-direction: column;
+      gap: 16px;
     }
 
     .cli-links {
       flex-direction: column;
     }
+
+    .pricing-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pricing-card.featured {
+      transform: none;
+    }
+
+    .cta-benefits {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .cta-benefit {
+      justify-content: center;
+    }
   }
 </style>
-
-<script is:inline>
-  // Terminal animation showing the journey
-  const terminalLines = [
-    {
-      type: "comment",
-      text: "# Welcome to NimbleTools - let's deploy your first MCP server",
-      delay: 0,
-    },
-    { type: "command", text: "ntcli auth signup", delay: 500 },
-    { type: "output", text: "Enter email: developer@example.com", delay: 1000 },
-    { type: "output", text: "Enter password: ********", delay: 1300 },
-    { type: "success", text: "✓ Account created successfully!", delay: 1700 },
-    { type: "output", text: "", delay: 1900 },
-
-    {
-      type: "comment",
-      text: "# Create a workspace for your project",
-      delay: 2100,
-    },
-    {
-      type: "command",
-      text: "ntcli workspace create my-ai-assistant",
-      delay: 2600,
-    },
-    {
-      type: "success",
-      text: "✓ Workspace 'my-ai-assistant' created",
-      delay: 3100,
-    },
-    {
-      type: "success",
-      text: "✓ Switched to workspace 'my-ai-assistant'",
-      delay: 3300,
-    },
-    { type: "output", text: "", delay: 3500 },
-
-    { type: "comment", text: "# Deploy your first MCP server", delay: 3700 },
-    { type: "command", text: "ntcli server deploy github-mcp", delay: 4200 },
-    { type: "output", text: "Pulling server image...", delay: 4700 },
-    { type: "output", text: "Creating isolated environment...", delay: 5200 },
-    { type: "output", text: "Configuring endpoints...", delay: 5700 },
-    { type: "success", text: "✓ Server deployed successfully", delay: 6200 },
-    { type: "output", text: "Server ID: srv_xyz789", delay: 6400 },
-    { type: "output", text: "Status: Running", delay: 6500 },
-    {
-      type: "output",
-      text: "Endpoint: https://my-ai-assistant.nimbletools.com/servers/srv_xyz789",
-      delay: 6600,
-    },
-    { type: "output", text: "", delay: 6800 },
-
-    {
-      type: "comment",
-      text: "# Need more power? Scale up instantly",
-      delay: 7300,
-    },
-    { type: "command", text: "ntcli server scale srv_xyz789 4", delay: 7800 },
-    { type: "output", text: "Scaling server to 4 instances...", delay: 8300 },
-    { type: "success", text: "✓ Server scaled successfully", delay: 9000 },
-    { type: "output", text: "Instances: 4/4 running", delay: 9200 },
-    { type: "output", text: "Load balancer: Active", delay: 9300 },
-    { type: "output", text: "", delay: 9500 },
-
-    { type: "comment", text: "# Your MCP server is ready! 🚀", delay: 10000 },
-  ];
-
-  function animateTerminal() {
-    const terminal = document.getElementById("terminal");
-    if (!terminal) return;
-
-    terminal.innerHTML = "";
-
-    terminalLines.forEach((line, index) => {
-      setTimeout(() => {
-        const lineElement = document.createElement("div");
-        lineElement.className = `terminal-line ${line.type}`;
-        lineElement.style.animationDelay = "0s";
-
-        if (line.type === "command") {
-          lineElement.innerHTML = `<span class="prompt">$</span> ${line.text}`;
-        } else {
-          lineElement.textContent = line.text;
-        }
-
-        terminal.appendChild(lineElement);
-        terminal.scrollTop = terminal.scrollHeight;
-      }, line.delay);
-    });
-  }
-
-  // Start animation when terminal is in view
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateTerminal();
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  const terminalContainer = document.querySelector(".terminal-container");
-  if (terminalContainer) {
-    observer.observe(terminalContainer);
-  }
-</script>

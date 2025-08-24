@@ -1,0 +1,1755 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import InstallCLI from "../components/InstallCLI.astro";
+import { externalLinks } from "../config/externalLinks.js";
+---
+
+<BaseLayout
+  title="How It Works - NimbleTools MCP Platform"
+  description="Learn how to deploy and manage MCP servers with the NimbleTools CLI. Step-by-step guide to enterprise MCP server infrastructure."
+  keywords="MCP deployment, CLI tutorial, MCP server management, enterprise AI infrastructure, Model Context Protocol"
+  currentPage="how-it-works"
+>
+  <section class="hero section-bg-tertiary">
+    <div class="container">
+      <h1>See How Easy Enterprise MCP Really Is</h1>
+      <p class="subtitle">
+        Watch platform teams go from weeks of custom development to production MCP
+        servers in under 5 minutes — with enterprise security built-in from day
+        one.
+      </p>
+      <div class="hero-cta">
+        <InstallCLI />
+        <span class="cta-note">Free to use • Deploy in minutes</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="terminal-section section-bg-secondary" id="demo">
+    <div class="container">
+      <h2 class="section-title">Watch a Platform Team Deploy GitHub MCP</h2>
+      <p class="section-subtitle">
+        From installation to 50 developers having secure AI-powered GitHub access
+        in under 5 minutes
+      </p>
+
+      <div class="terminal-container">
+      <div class="terminal-header">
+        <div class="terminal-dot red"></div>
+        <div class="terminal-dot yellow"></div>
+        <div class="terminal-dot green"></div>
+        <span class="terminal-title">nimble tools journey</span>
+      </div>
+      <div class="terminal-body" id="terminal">
+        <!-- Terminal content will be dynamically added -->
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="integration-section section-bg-primary">
+    <div class="container">
+      <h2 class="section-title">Deploy Where Your Data Lives</h2>
+      <p class="section-subtitle">
+        Your data never leaves your environment with BYOC, or go zero-ops with
+        our managed cloud
+      </p>
+
+      <div class="architecture-diagram">
+        <div class="arch-layer">
+          <h4>MCP Clients</h4>
+          <div class="arch-items">
+            <div class="arch-item">Claude</div>
+            <div class="arch-item">Cursor</div>
+            <div class="arch-item">VS Code</div>
+            <div class="arch-item">Agents</div>
+            <div class="arch-item">Workflows</div>
+          </div>
+        </div>
+
+        <div class="arch-arrow">↓</div>
+
+        <div class="arch-layer highlight runtime-layer">
+          <div class="runtime-header">
+            <h4>NimbleTools Runtime</h4>
+            <div class="runtime-location">
+              <span class="location-indicator cloud-indicator">☁️ Cloud</span>
+              <span class="location-divider">/</span>
+              <span class="location-indicator byoc-indicator">🏢 BYOC</span>
+            </div>
+          </div>
+          <div class="runtime-container">
+            <div class="runtime-platform">
+              <div class="platform-items">
+                <div class="arch-item platform">Load Balancer</div>
+                <div class="arch-item platform">Auth Gateway</div>
+                <div class="arch-item platform">Monitoring</div>
+              </div>
+            </div>
+            <div class="runtime-servers">
+              <div class="servers-label">MCP Servers (Managed)</div>
+              <div class="arch-items">
+                <div class="arch-item server">GitHub MCP</div>
+                <div class="arch-item server">Salesforce MCP</div>
+                <div class="arch-item server">Custom MCP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="runtime-deployment-note">
+          Deploy on NimbleTools Cloud or bring your own cloud (BYOC)
+        </div>
+
+        <div class="arch-arrow">↓</div>
+
+        <div class="arch-layer">
+          <h4>Your Systems</h4>
+          <div class="arch-items">
+            <div class="arch-item">APIs</div>
+            <div class="arch-item">Databases</div>
+            <div class="arch-item">Services</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="workflow-section section-bg-secondary">
+    <div class="container">
+      <h2 class="section-title">Ready to Implement? Here's Your Roadmap</h2>
+      <p class="section-subtitle">
+        The proven 4-step process platform teams use to roll out NimbleTools
+        enterprise-wide.
+      </p>
+
+      <div class="workflow-grid">
+        <div class="workflow-step">
+          <div class="workflow-number">1</div>
+          <h3>Install & Authenticate</h3>
+          <p>
+            Install the CLI globally and authenticate with your enterprise SSO
+            for immediate team integration.
+          </p>
+          <div class="workflow-code">
+            <pre>npm install -g @nimbletools/ntcli
+ntcli auth login --sso</pre>
+          </div>
+        </div>
+
+        <div class="workflow-step">
+          <div class="workflow-number">2</div>
+          <h3>Create Workspaces</h3>
+          <p>
+            Organize MCP servers by team, project, or environment with built-in
+            access control and governance.
+          </p>
+          <div class="workflow-code">
+            <pre>ntcli workspace create dev-team
+ntcli workspace create sales-team
+ntcli workspace create production</pre>
+          </div>
+        </div>
+
+        <div class="workflow-step">
+          <div class="workflow-number">3</div>
+          <h3>Deploy MCP Servers</h3>
+          <p>
+            Deploy production-ready MCP servers with enterprise security,
+            monitoring, and scaling built-in.
+          </p>
+          <div class="workflow-code">
+            <pre>ntcli server deploy github-mcp --workspace dev-team
+ntcli server deploy salesforce-mcp --workspace sales-team</pre>
+          </div>
+        </div>
+
+        <div class="workflow-step">
+          <div class="workflow-number">4</div>
+          <h3>Scale & Monitor</h3>
+          <p>
+            Track usage across teams and scale automatically based on real-world
+            adoption patterns.
+          </p>
+          <div class="workflow-code">
+            <pre>ntcli server status --all-workspaces
+ntcli server scale github-mcp 4
+ntcli analytics --workspace dev-team</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem-solution-flow section-bg-primary">
+    <div class="container">
+      <h2 class="section-title">Why Teams Choose NimbleTools</h2>
+      <p class="section-subtitle">
+        Understanding the challenges of traditional MCP deployment and how we
+        solve them
+      </p>
+
+      <div class="flow-grid">
+        <!-- Problem Section -->
+        <div class="flow-section problem-section">
+          <div class="flow-header">
+            <div class="flow-badge problem-badge">The Challenge</div>
+            <h2>Complex, Insecure, Isolated</h2>
+          </div>
+          <div class="flow-points">
+            <div class="flow-point">
+              <div class="point-icon">🔐</div>
+              <div class="point-content">
+                <h4>Security Afterthoughts</h4>
+                <p>
+                  Enterprise security, SSO, and compliance become expensive
+                  afterthoughts
+                </p>
+              </div>
+            </div>
+            <div class="flow-point">
+              <div class="point-icon">📈</div>
+              <div class="point-content">
+                <h4>Scaling Bottlenecks</h4>
+                <p>
+                  Infrastructure and operational complexity become major
+                  bottlenecks
+                </p>
+              </div>
+            </div>
+            <div class="flow-point">
+              <div class="point-icon">👥</div>
+              <div class="point-content">
+                <h4>No Team Collaboration</h4>
+                <p>
+                  Teams build isolated solutions without shared access control
+                  or governance
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flow Arrow -->
+        <div class="flow-transition">
+          <div class="flow-arrow">→</div>
+          <div class="transition-text">There's a better way</div>
+        </div>
+
+        <!-- Solution Section -->
+        <div class="flow-section solution-section">
+          <div class="flow-header">
+            <div class="flow-badge solution-badge">The Solution</div>
+            <h2>Secure, Scalable, Collaborative</h2>
+          </div>
+          <div class="flow-points">
+            <div class="flow-point">
+              <div class="point-icon">🔐</div>
+              <div class="point-content">
+                <h4>Security Built-In</h4>
+                <p>
+                  Enterprise SSO, audit logs, and compliance controls included
+                  from day one
+                </p>
+              </div>
+            </div>
+            <div class="flow-point">
+              <div class="point-icon">📊</div>
+              <div class="point-content">
+                <h4>Auto-Scale & Monitor</h4>
+                <p>
+                  Infrastructure that scales automatically with built-in
+                  monitoring and analytics
+                </p>
+              </div>
+            </div>
+            <div class="flow-point">
+              <div class="point-icon">🏢</div>
+              <div class="point-content">
+                <h4>Workspace-Based Teams</h4>
+                <p>
+                  Organize MCP servers by team with proper isolation and
+                  centralized governance
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo-section section-bg-tertiary">
+    <div class="container">
+      <h2 class="section-title">Community MCP Servers</h2>
+      <p class="section-subtitle">
+        Deploy battle-tested community MCP servers instantly. Built by
+        developers, secured and scaled by NimbleTools.
+      </p>
+
+      <div class="demo-grid">
+        <div class="demo-card">
+          <div class="demo-header">
+            <div class="demo-icon">
+              <img
+                src="https://cdn.brandfetch.io/salesforce.com/w/512/h/358/logo?c=1idyxjg0fWEyhdkPzvM"
+                alt="Salesforce"
+                width="32"
+                height="32"
+              />
+            </div>
+            <h3>Salesforce</h3>
+          </div>
+          <div class="demo-content">
+            <p>
+              Community-built MCP server for Salesforce integration. Deploy with
+              enterprise security and authentication.
+            </p>
+            <div class="demo-actions">
+              <span class="action-tag">✓ CRM data access</span>
+              <span class="action-tag">✓ Lead management</span>
+              <span class="action-tag">✓ Task automation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <div class="demo-header">
+            <div class="demo-icon">
+              <img
+                src="https://cdn.brandfetch.io/atlassian.com/w/512/h/512/symbol?c=1idyxjg0fWEyhdkPzvM"
+                alt="Atlassian"
+                width="32"
+                height="32"
+              />
+            </div>
+            <h3>Jira Project Management</h3>
+          </div>
+          <div class="demo-content">
+            <p>
+              Open-source MCP server for Atlassian tools. Enterprise-ready
+              project management integration.
+            </p>
+            <div class="demo-actions">
+              <span class="action-tag">✓ Issue management</span>
+              <span class="action-tag">✓ Sprint tracking</span>
+              <span class="action-tag">✓ Project insights</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <div class="demo-header">
+            <div class="demo-icon">
+              <img
+                src="https://cdn.brandfetch.io/google.com/w/400/h/400?c=1idyxjg0fWEyhdkPzvM"
+                alt="Google"
+                width="32"
+                height="32"
+              />
+            </div>
+            <h3>Google Drive & Docs</h3>
+          </div>
+          <div class="demo-content">
+            <p>
+              Community MCP server for Google Workspace. Secure file and
+              document management.
+            </p>
+            <div class="demo-actions">
+              <span class="action-tag">✓ Drive access</span>
+              <span class="action-tag">✓ Docs & Sheets</span>
+              <span class="action-tag">✓ Team collaboration</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <div class="demo-header">
+            <div class="demo-icon">
+              <img
+                src="https://cdn.brandfetch.io/github.com/w/512/h/502/theme/light/symbol?c=1idyxjg0fWEyhdkPzvM"
+                alt="GitHub"
+                width="32"
+                height="32"
+              />
+            </div>
+            <h3>GitHub</h3>
+          </div>
+          <div class="demo-content">
+            <p>
+              Popular community server for GitHub integration. Code repository
+              management made simple.
+            </p>
+            <div class="demo-actions">
+              <span class="action-tag">✓ Repository access</span>
+              <span class="action-tag">✓ Code operations</span>
+              <span class="action-tag">✓ Workflow automation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-card">
+          <div class="demo-header">
+            <div class="demo-icon">
+              <img
+                src="https://cdn.brandfetch.io/postgrespro.com/w/200/h/200?c=1idyxjg0fWEyhdkPzvM"
+                alt="PostgreSQL"
+                width="32"
+                height="32"
+              />
+            </div>
+            <h3>PostgreSQL Database</h3>
+          </div>
+          <div class="demo-content">
+            <p>
+              Battle-tested database MCP server. Secure SQL operations with
+              enterprise controls.
+            </p>
+            <div class="demo-actions">
+              <span class="action-tag">✓ Secure queries</span>
+              <span class="action-tag">✓ Schema operations</span>
+              <span class="action-tag">✓ Data insights</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-card featured">
+          <div class="demo-header">
+            <div class="demo-icon">🏛️</div>
+            <h3>Government APIs</h3>
+          </div>
+          <div class="demo-content">
+            <p>
+              Open data MCP server for government APIs. Access public datasets
+              and regulatory information.
+            </p>
+            <div class="demo-actions">
+              <span class="action-tag">✓ Public APIs</span>
+              <span class="action-tag">✓ Weather data</span>
+              <span class="action-tag">✓ Regulatory info</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-footer">
+        <p>Looking for something custom? We've got you covered.</p>
+        <a href="/custom-mcp-servers" class="demo-link">Custom MCP Servers →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="enterprise-workspaces section-bg-secondary" id="workspaces">
+    <div class="container">
+      <h2 class="section-title">Enterprise Workspaces in Action</h2>
+      <p class="section-subtitle">
+        See how different teams use isolated workspaces with tailored MCP server
+        access for their specific workflows.
+      </p>
+
+      <div class="workspaces-grid">
+        <div class="workspace-card">
+          <div class="workspace-header">
+            <div class="workspace-icon">👨‍💻</div>
+            <h3>Developer Workspace</h3>
+            <p class="workspace-team">Engineering Team</p>
+          </div>
+          <div class="workspace-tools">
+            <div class="tool-item">
+              <img
+                src="https://cdn.brandfetch.io/github.com/w/512/h/502/theme/light/symbol?c=1idyxjg0fWEyhdkPzvM"
+                alt="GitHub"
+                width="20"
+                height="20"
+              />
+              <span>GitHub MCP Server</span>
+            </div>
+            <div class="tool-item">
+              <img
+                src="https://cdn.brandfetch.io/postgrespro.com/w/200/h/200?c=1idyxjg0fWEyhdkPzvM"
+                alt="PostgreSQL"
+                width="20"
+                height="20"
+              />
+              <span>Database MCP Server</span>
+            </div>
+            <div class="tool-item">
+              <div class="tool-icon">📝</div>
+              <span>Notion MCP Server</span>
+            </div>
+          </div>
+          <p class="workspace-description">
+            Code reviews, repository management, database queries, and technical
+            documentation — all accessible to AI agents with proper permissions.
+          </p>
+        </div>
+
+        <div class="workspace-card">
+          <div class="workspace-header">
+            <div class="workspace-icon">💼</div>
+            <h3>Sales & Marketing Workspace</h3>
+            <p class="workspace-team">Revenue Team</p>
+          </div>
+          <div class="workspace-tools">
+            <div class="tool-item">
+              <img
+                src="https://cdn.brandfetch.io/salesforce.com/w/512/h/358/logo?c=1idyxjg0fWEyhdkPzvM"
+                alt="Salesforce"
+                width="20"
+                height="20"
+              />
+              <span>Salesforce MCP Server</span>
+            </div>
+            <div class="tool-item">
+              <div class="tool-icon">🎯</div>
+              <span>HubSpot MCP Server</span>
+            </div>
+            <div class="tool-item">
+              <img
+                src="https://cdn.brandfetch.io/google.com/w/400/h/400?c=1idyxjg0fWEyhdkPzvM"
+                alt="Google"
+                width="20"
+                height="20"
+              />
+              <span>Google Analytics Server</span>
+            </div>
+          </div>
+          <p class="workspace-description">
+            Lead qualification, opportunity management, campaign analysis, and
+            customer insights — AI agents help close more deals faster.
+          </p>
+        </div>
+
+        <div class="workspace-card">
+          <div class="workspace-header">
+            <div class="workspace-icon">👥</div>
+            <h3>HR Workspace</h3>
+            <p class="workspace-team">People Operations</p>
+          </div>
+          <div class="workspace-tools">
+            <div class="tool-item">
+              <div class="tool-icon">💼</div>
+              <span>LinkedIn Recruiter Server</span>
+            </div>
+            <div class="tool-item">
+              <div class="tool-icon">📋</div>
+              <span>Ashby ATS Server</span>
+            </div>
+            <div class="tool-item">
+              <div class="tool-icon">✅</div>
+              <span>Greenhouse Server</span>
+            </div>
+          </div>
+          <p class="workspace-description">
+            Candidate sourcing, interview scheduling, and onboarding workflows —
+            streamline hiring with AI-powered recruitment tools.
+          </p>
+        </div>
+      </div>
+
+      <div class="workspace-benefits">
+        <h3>Why Enterprise Teams Choose Workspaces</h3>
+        <div class="benefits-grid">
+          <div class="benefit-item">
+            <div class="benefit-icon">🔐</div>
+            <h4>Proper Access Control</h4>
+            <p>
+              Each team only sees the tools they need. HR can't access
+              engineering databases, sales can't see internal code.
+            </p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">📊</div>
+            <h4>Usage Analytics</h4>
+            <p>
+              Track which teams are using AI agents most effectively and
+              optimize resource allocation accordingly.
+            </p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">⚡</div>
+            <h4>Team-Specific Scaling</h4>
+            <p>
+              Scale MCP servers independently based on each team's usage
+              patterns and performance requirements.
+            </p>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">🛡️</div>
+            <h4>Compliance Ready</h4>
+            <p>
+              Audit logs, SSO integration, and data governance controls for
+              SOC2, GDPR, and enterprise compliance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* Hero Section */
+  .hero {
+    text-align: center;
+  }
+
+  .hero-cta {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .cta-note {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  /* Challenge Section */
+
+  .challenge-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 64px;
+  }
+
+  .challenge-item {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+  }
+
+  .challenge-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .challenge-item h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: #ff6b6b;
+  }
+
+  .challenge-item p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .solution-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 64px;
+  }
+
+  .solution-item {
+    background: rgba(0, 255, 136, 0.05);
+    border: 1px solid var(--accent);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+  }
+
+  .solution-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .solution-item h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    color: var(--accent);
+  }
+
+  .solution-item p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Terminal Demo */
+
+  .terminal-container {
+    background: var(--bg-terminal);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .terminal-header {
+    background: var(--bg-secondary);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+
+  .terminal-dot.red {
+    background: #ff5f57;
+  }
+  .terminal-dot.yellow {
+    background: #ffbd2e;
+  }
+  .terminal-dot.green {
+    background: #28ca42;
+  }
+
+  .terminal-title {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-left: auto;
+    font-family: "SF Mono", Consolas, monospace;
+  }
+
+  .terminal-body {
+    padding: 24px;
+    font-family: "SF Mono", Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    height: 500px;
+    overflow-y: auto;
+  }
+
+  .terminal-line {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: flex-start;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+  }
+
+  .terminal-line.command {
+    color: var(--text-primary);
+  }
+
+  .terminal-line.output {
+    color: var(--text-secondary);
+    padding-left: 0;
+  }
+
+  .terminal-line.success {
+    color: var(--accent);
+  }
+
+  .terminal-line.comment {
+    color: #6b7280;
+    font-style: italic;
+  }
+
+  .prompt {
+    color: var(--accent);
+    margin-right: 8px;
+    user-select: none;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Workflow Section */
+
+  .workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 64px;
+  }
+
+  .workflow-step {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+  }
+
+  .workflow-number {
+    position: absolute;
+    top: -16px;
+    left: 32px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .workflow-step h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    margin-top: 8px;
+  }
+
+  .workflow-step p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .workflow-code {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  .workflow-code pre {
+    font-family: "SF Mono", Consolas, monospace;
+    font-size: 13px;
+    color: var(--accent);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .deployment-choice {
+    margin-top: 80px;
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+
+  .deployment-choice h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+  }
+
+  .deployment-choice p {
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    font-size: 16px;
+  }
+
+  /* Integration Architecture */
+
+  .deployment-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    margin: 48px 0;
+    padding: 32px;
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+  }
+
+  .deployment-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .deployment-badge {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .deployment-badge.cloud {
+    background: rgba(0, 123, 255, 0.15);
+    color: #007bff;
+    border: 1px solid #007bff;
+  }
+
+  .deployment-badge.byoc {
+    background: rgba(108, 117, 125, 0.15);
+    color: #6c757d;
+    border: 1px solid #6c757d;
+  }
+
+  .deployment-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  .deployment-divider {
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 16px;
+  }
+
+  .architecture-diagram {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 48px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .arch-layer {
+    width: 100%;
+    text-align: center;
+  }
+
+  .arch-layer h4 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+  }
+
+  .runtime-layer {
+    background: rgba(0, 255, 136, 0.05);
+    border: 2px solid var(--accent);
+    border-radius: 16px;
+    padding: 24px;
+    position: relative;
+  }
+
+  .runtime-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .runtime-header h4 {
+    color: var(--accent);
+    margin-bottom: 0;
+  }
+
+  .runtime-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+  }
+
+  .location-indicator {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .cloud-indicator {
+    background: rgba(0, 123, 255, 0.15);
+    color: #007bff;
+  }
+
+  .byoc-indicator {
+    background: rgba(108, 117, 125, 0.15);
+    color: #6c757d;
+  }
+
+  .location-divider {
+    color: var(--text-secondary);
+  }
+
+  .runtime-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .runtime-platform {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+  }
+
+  .platform-items {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .runtime-servers {
+    text-align: center;
+  }
+
+  .servers-label {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .arch-items {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .arch-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 13px;
+    color: var(--text-primary);
+  }
+
+  .arch-item.platform {
+    background: rgba(0, 255, 136, 0.1);
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .arch-item.server {
+    background: rgba(0, 255, 136, 0.15);
+    border-color: var(--accent);
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .runtime-deployment-note {
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-top: 0px;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .arch-arrow {
+    font-size: 24px;
+    color: var(--accent);
+  }
+
+  /* Product Tiers */
+
+  .tier-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    margin-top: 64px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tier-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px;
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .tier-card:hover {
+    border-color: var(--text-secondary);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .tier-card.enterprise {
+    border-color: var(--enterprise);
+  }
+
+  .tier-badge {
+    position: absolute;
+    top: -12px;
+    right: 32px;
+    background: var(--enterprise);
+    color: white;
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .tier-name {
+    font-size: 16px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+  }
+
+  .tier-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+
+  .tier-description {
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+
+  .tier-features {
+    list-style: none;
+    margin-bottom: 32px;
+  }
+
+  .tier-features li {
+    padding: 12px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: var(--text-primary);
+  }
+
+  .tier-features li::before {
+    content: "✓";
+    color: var(--accent);
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .tier-cta {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s;
+    width: 100%;
+  }
+
+  .tier-cta.cloud {
+    background: var(--accent);
+    color: var(--bg-primary);
+  }
+
+  .tier-cta.cloud:hover {
+    background: var(--accent-dim);
+    transform: translateY(-1px);
+  }
+
+  .tier-cta.enterprise {
+    background: var(--enterprise);
+    color: white;
+  }
+
+  .tier-cta.enterprise:hover {
+    background: var(--enterprise-dim);
+    transform: translateY(-1px);
+  }
+
+  /* Problem-Solution Flow Section */
+
+  .flow-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 48px;
+    align-items: start;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .flow-section {
+    min-height: 400px;
+  }
+
+  .flow-header {
+    margin-bottom: 32px;
+  }
+
+  .flow-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+
+  .problem-badge {
+    background: rgba(255, 107, 107, 0.15);
+    color: #ff6b6b;
+    border: 1px solid #ff6b6b;
+  }
+
+  .solution-badge {
+    background: rgba(0, 255, 136, 0.15);
+    color: var(--accent);
+    border: 1px solid var(--accent);
+  }
+
+  .flow-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 0;
+    line-height: 1.2;
+  }
+
+  .problem-section h2 {
+    color: #ff6b6b;
+  }
+
+  .solution-section h2 {
+    color: var(--accent);
+  }
+
+  .flow-points {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .flow-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .point-icon {
+    font-size: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .point-content h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .problem-section .point-content h4 {
+    color: #ff6b6b;
+  }
+
+  .solution-section .point-content h4 {
+    color: var(--accent);
+  }
+
+  .point-content p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  .flow-transition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 200px;
+  }
+
+  .flow-arrow {
+    font-size: 32px;
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-weight: bold;
+  }
+
+  .transition-text {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-style: italic;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    white-space: nowrap;
+  }
+
+  /* Demo Section */
+
+  .demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .demo-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.3s;
+  }
+
+  .demo-card:hover {
+    border-color: var(--text-secondary);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .demo-card.featured {
+    border-color: var(--accent);
+  }
+
+  .demo-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .demo-icon {
+    font-size: 32px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+
+  .demo-icon img {
+    border-radius: 6px;
+  }
+
+  .demo-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .demo-content p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .demo-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .action-tag {
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--accent);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+  }
+
+  .demo-footer {
+    text-align: center;
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+  }
+
+  .demo-footer p {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .demo-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.2s;
+  }
+
+  .demo-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Enterprise Workspaces */
+
+  .workspaces-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+  }
+
+  .workspace-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.3s;
+  }
+
+  .workspace-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .workspace-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .workspace-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+
+  .workspace-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .workspace-team {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .workspace-tools {
+    margin-bottom: 24px;
+  }
+
+  .tool-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tool-item:last-child {
+    border-bottom: none;
+  }
+
+  .tool-item img {
+    border-radius: 4px;
+  }
+
+  .tool-icon {
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .workspace-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 15px;
+  }
+
+  .workspace-benefits {
+    margin-top: 80px;
+    text-align: center;
+  }
+
+  .workspace-benefits h3 {
+    font-size: 32px;
+    margin-bottom: 48px;
+  }
+
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .benefit-item {
+    text-align: center;
+  }
+
+  .benefit-icon {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .benefit-item h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+  }
+
+  .benefit-item p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  /* CTA Section */
+
+  .pilot-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  .benefit {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+
+  .social-proof {
+    margin-top: 24px;
+  }
+
+  .proof-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .challenge-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .solution-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pilot-benefits {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+
+    .workflow-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tier-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .deployment-options {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .deployment-divider {
+      transform: rotate(90deg);
+    }
+
+    .runtime-header {
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .runtime-location {
+      align-self: center;
+    }
+
+    .arch-items {
+      gap: 8px;
+    }
+
+    .arch-item {
+      font-size: 12px;
+      padding: 8px 12px;
+    }
+
+    .flow-grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .flow-transition {
+      min-height: auto;
+    }
+    .flow-arrow {
+      transform: rotate(90deg);
+    }
+    .transition-text {
+      writing-mode: horizontal-tb;
+      text-orientation: initial;
+    }
+
+    .workspaces-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .workspace-benefits h3 {
+      font-size: 24px;
+    }
+  }
+</style>
+
+<script is:inline>
+  // Terminal animation showing the journey
+  const terminalLines = [
+    {
+      type: "comment",
+      text: "# Platform team deploying GitHub MCP for developer workspace",
+      delay: 0,
+    },
+    { type: "command", text: "ntcli auth login --sso", delay: 500 },
+    { type: "output", text: "Opening SSO login...", delay: 1000 },
+    {
+      type: "success",
+      text: "✓ Authenticated as platform-team@acme.com",
+      delay: 1500,
+    },
+    { type: "output", text: "", delay: 1700 },
+
+    {
+      type: "comment",
+      text: "# Create workspace for development team (50 developers)",
+      delay: 1900,
+    },
+    {
+      type: "command",
+      text: "ntcli workspace create dev-team --users 50",
+      delay: 2400,
+    },
+    {
+      type: "success",
+      text: "✓ Workspace 'dev-team' created with 50 user slots",
+      delay: 2900,
+    },
+    { type: "success", text: "✓ SSO integration enabled", delay: 3100 },
+    { type: "output", text: "", delay: 3300 },
+
+    {
+      type: "comment",
+      text: "# Deploy GitHub MCP with enterprise security",
+      delay: 3500,
+    },
+    {
+      type: "command",
+      text: "ntcli server deploy github-mcp --workspace dev-team",
+      delay: 4000,
+    },
+    {
+      type: "output",
+      text: "Pulling enterprise GitHub MCP image...",
+      delay: 4500,
+    },
+    {
+      type: "output",
+      text: "Configuring GitHub App integration...",
+      delay: 5000,
+    },
+    { type: "output", text: "Setting up audit logging...", delay: 5500 },
+    {
+      type: "output",
+      text: "Enabling rate limiting & monitoring...",
+      delay: 6000,
+    },
+    {
+      type: "success",
+      text: "✓ GitHub MCP deployed successfully",
+      delay: 6500,
+    },
+    {
+      type: "output",
+      text: "Endpoint: https://dev-team.acme.nimbletools.com/github",
+      delay: 6700,
+    },
+    { type: "output", text: "", delay: 6900 },
+
+    {
+      type: "comment",
+      text: "# Scale for peak usage (all 50 developers active)",
+      delay: 7400,
+    },
+    {
+      type: "command",
+      text: "ntcli server scale github-mcp 4 --workspace dev-team",
+      delay: 7900,
+    },
+    {
+      type: "output",
+      text: "Scaling to handle 50 concurrent users...",
+      delay: 8400,
+    },
+    {
+      type: "success",
+      text: "✓ Scaled to 4 instances with load balancing",
+      delay: 9100,
+    },
+    { type: "output", text: "Ready for production workloads", delay: 9300 },
+    { type: "output", text: "", delay: 9500 },
+
+    {
+      type: "comment",
+      text: "# ✅ Result: 50 developers now have secure AI-powered GitHub access",
+      delay: 10000,
+    },
+  ];
+
+  function animateTerminal() {
+    const terminal = document.getElementById("terminal");
+    if (!terminal) return;
+
+    terminal.innerHTML = "";
+
+    terminalLines.forEach((line, index) => {
+      setTimeout(() => {
+        const lineElement = document.createElement("div");
+        lineElement.className = `terminal-line ${line.type}`;
+        lineElement.style.animationDelay = "0s";
+
+        if (line.type === "command") {
+          lineElement.innerHTML = `<span class="prompt">$</span> ${line.text}`;
+        } else {
+          lineElement.textContent = line.text;
+        }
+
+        terminal.appendChild(lineElement);
+        terminal.scrollTop = terminal.scrollHeight;
+      }, line.delay);
+    });
+  }
+
+  // Start animation when terminal is in view
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateTerminal();
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  const terminalContainer = document.querySelector(".terminal-container");
+  if (terminalContainer) {
+    observer.observe(terminalContainer);
+  }
+</script>

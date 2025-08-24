@@ -1,0 +1,142 @@
+/* Core Section Styles */
+
+/* Section Background Classes */
+.section-bg-primary {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-bg-secondary {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-bg-tertiary {
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Remove border from final sections */
+.section-bg-primary:last-of-type,
+.section-bg-secondary:last-of-type,
+.section-bg-tertiary:last-of-type {
+  border-bottom: none;
+}
+
+/* Override for sections that should never have borders */
+.section-no-border {
+  border-bottom: none !important;
+}
+
+/* Common Section Styles */
+section {
+  padding: 80px 0;
+}
+
+/* Hero sections get more padding */
+.hero {
+  padding: 100px 0 80px;
+  text-align: center;
+}
+
+/* Section Title Styles */
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 18px;
+  margin-bottom: 64px;
+}
+
+/* CTA Section Styles */
+.cta-section {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 48px;
+  margin-bottom: 24px;
+}
+
+.cta-section p {
+  font-size: 20px;
+  color: var(--text-secondary);
+  margin-bottom: 48px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Single CTA wrapper */
+.single-cta {
+  display: flex;
+  justify-content: center;
+}
+
+/* Trust Badges */
+.trust-badges {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 64px;
+  opacity: 0.6;
+}
+
+.trust-badge {
+  font-size: 14px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Code Block Styles */
+.code-block {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-primary);
+  overflow-x: auto;
+}
+
+.code-comment {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 36px;
+  }
+  
+  .section-subtitle {
+    font-size: 16px;
+    margin-bottom: 48px;
+  }
+  
+  .cta-section h2 {
+    font-size: 36px;
+  }
+  
+  .cta-section p {
+    font-size: 18px;
+  }
+  
+  .trust-badges {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}

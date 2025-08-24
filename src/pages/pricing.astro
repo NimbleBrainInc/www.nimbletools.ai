@@ -1,0 +1,1693 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { externalLinks } from "../config/externalLinks.js";
+import InstallCLI from "../components/InstallCLI.astro";
+---
+
+<BaseLayout
+  title="Pricing - NimbleTools"
+  description="Choose between our Open Source Community Edition for individual developers and our Enterprise Edition for teams that need governance, compliance, and scale."
+  keywords="MCP pricing, Model Context Protocol pricing, enterprise MCP, open source MCP, MCP server pricing"
+  currentPage="pricing"
+>
+  <section class="hero section-bg-tertiary">
+    <div class="container">
+      <h1>Simple, Scalable Pricing</h1>
+      <p class="subtitle">
+        Start free with Community, scale with Starter, grow to Team, or go
+        Enterprise. Choose the plan that fits your scale.
+      </p>
+    </div>
+  </section>
+
+  <section class="pricing-section section-bg-secondary">
+    <div class="container">
+      <div class="pricing-grid">
+        <!-- Community -->
+        <div class="pricing-card">
+          <h3 class="plan-title">Community</h3>
+          <div class="plan-pricing">
+            <span class="price">Free</span>
+          </div>
+          <a href={externalLinks.appLink} class="primary-cta cta-button">
+            <span>Start Free</span>
+          </a>
+          <div class="plan-limits">
+            <div class="limit-item">
+              <span>1 Workspace</span>
+            </div>
+            <div class="limit-item">
+              <span>Up to 5 MCP servers</span>
+            </div>
+            <div class="limit-item">
+              <span>50K MCP calls/month</span>
+            </div>
+            <div class="limit-item">
+              <span>Community support only</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Starter -->
+        <div class="pricing-card">
+          <h3 class="plan-title">Starter</h3>
+          <div class="plan-pricing">
+            <span class="price">$49</span>
+            <span class="period">/month</span>
+          </div>
+          <a href={externalLinks.starterPayment} class="primary-cta cta-button">
+            <span>Buy Now</span>
+          </a>
+          <div class="plan-limits">
+            <div class="limit-item">
+              <span>5 workspaces</span>
+            </div>
+            <div class="limit-item">
+              <span>Up to 10 MCP servers</span>
+            </div>
+            <div class="limit-item">
+              <span>250K MCP calls/month</span>
+            </div>
+            <div class="limit-item">
+              <span>Overage: $25 per 100K</span>
+            </div>
+            <div class="limit-item">
+              <span>Email support</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team -->
+        <div class="pricing-card featured">
+          <div class="best-value-badge">BEST VALUE</div>
+          <h3 class="plan-title">Team</h3>
+          <div class="plan-pricing">
+            <span class="price">$199</span>
+            <span class="period">/month</span>
+          </div>
+          <a href={externalLinks.teamPayment} class="primary-cta cta-button">
+            <span>Buy Now</span>
+          </a>
+          <div class="plan-limits">
+            <div class="limit-item">
+              <span>20 workspaces</span>
+            </div>
+            <div class="limit-item">
+              <span>Up to 50 MCP servers</span>
+            </div>
+            <div class="limit-item">
+              <span>1M MCP calls/month</span>
+            </div>
+            <div class="limit-item">
+              <span>Overage: $20 per 100K</span>
+            </div>
+            <div class="limit-item">
+              <span>Email + limited priority support</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="pricing-card">
+          <h3 class="plan-title">Enterprise</h3>
+          <div class="plan-pricing">
+            <span class="price">Custom</span>
+          </div>
+          <a href={externalLinks.schedulingLink} class="outline-cta cta-button">
+            <span>Contact Sales</span>
+          </a>
+          <div class="plan-limits">
+            <div class="limit-item">
+              <span>Unlimited workspaces, servers, MCP calls</span>
+            </div>
+            <div class="limit-item">
+              <span>On-prem & BYOC deployment options</span>
+            </div>
+            <div class="limit-item">
+              <span>Dedicated account manager, 24/7 support</span>
+            </div>
+            <div class="limit-item">
+              <span>SLAs and compliance (SOC2, HIPAA, GDPR)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Open Source Row -->
+      <div class="open-source-section">
+        <div class="open-source-card">
+          <div class="open-source-content">
+            <div class="open-source-left">
+              <div class="open-source-header">
+                <h3>Open Source</h3>
+                <span class="open-source-badge">Free Forever</span>
+              </div>
+              <p>
+                Self-host our open source MCP servers on your own infrastructure
+                with complete control and customization.
+              </p>
+            </div>
+            <div class="open-source-right">
+              <button class="coming-soon-cta cta-button" disabled>
+                <span>Coming Soon</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Usage Calculator -->
+  <section class="calculator-section section-bg-tertiary" id="calculator">
+    <div class="container">
+      <h2 class="section-title">Find Your Perfect Plan</h2>
+      <p class="section-subtitle">
+        Adjust the sliders to see which plan fits your usage and what it costs
+      </p>
+
+      <div class="calculator-card">
+        <div class="calculator-inputs">
+          <div class="input-group">
+            <label for="workspaces">Workspaces</label>
+            <div class="slider-container">
+              <input
+                type="range"
+                id="workspaces"
+                min="1"
+                max="21"
+                value="1"
+                class="slider"
+              />
+              <span class="slider-value" id="workspaces-value">1</span>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="servers">Servers</label>
+            <div class="slider-container">
+              <input
+                type="range"
+                id="servers"
+                min="1"
+                max="51"
+                value="1"
+                class="slider"
+              />
+              <span class="slider-value" id="servers-value">3</span>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="invocations">Monthly MCP Calls</label>
+            <div class="slider-container">
+              <input
+                type="range"
+                id="invocations"
+                min="1000"
+                max="1100000"
+                value="1000"
+                step="10000"
+                class="slider"
+              />
+              <span class="slider-value" id="invocations-value">1K</span>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div class="checkbox-container">
+              <input type="checkbox" id="byoc" class="checkbox" />
+              <label for="byoc" class="checkbox-label"
+                >BYOC/On-premise deployment required</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="calculator-result">
+          <div class="recommended-plan">
+            <div class="plan-name" id="plan-name">Community</div>
+            <div class="plan-price" id="plan-price">Free</div>
+            <div class="plan-details" id="plan-details">
+              Perfect for getting started
+            </div>
+            <div
+              class="calculator-cta"
+              id="calculator-cta"
+              style="display: none;"
+            >
+              <a href={externalLinks.schedulingLink} class="calculator-btn">
+                <span>Schedule Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="vertical-separator"></div>
+
+        <div class="nomenclature-compact">
+          <div class="nomenclature-item-compact">
+            <div class="nomenclature-icon-compact workspaces-icon">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+                <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+                <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+                <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+              </svg>
+            </div>
+            <div class="nomenclature-text">
+              <h4>Workspaces</h4>
+              <p>Isolated environments for teams and projects</p>
+            </div>
+          </div>
+
+          <div class="nomenclature-item-compact">
+            <div class="nomenclature-icon-compact servers-icon">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <rect x="2" y="3" width="20" height="4" rx="1"></rect>
+                <rect x="2" y="9" width="20" height="4" rx="1"></rect>
+                <rect x="2" y="15" width="20" height="4" rx="1"></rect>
+                <circle cx="6" cy="5" r="1"></circle>
+                <circle cx="6" cy="11" r="1"></circle>
+                <circle cx="6" cy="17" r="1"></circle>
+              </svg>
+            </div>
+            <div class="nomenclature-text">
+              <h4>Servers</h4>
+              <p>Connected infrastructure endpoints</p>
+            </div>
+          </div>
+
+          <div class="nomenclature-item-compact">
+            <div class="nomenclature-icon-compact invocations-icon">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                ></path>
+              </svg>
+            </div>
+            <div class="nomenclature-text">
+              <h4>MCP Calls</h4>
+              <p>Monthly MCP toll calls and interactions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Comparison -->
+  <section class="comparison-section section-bg-secondary">
+    <div class="container">
+      <h2 class="section-title">Feature Comparison</h2>
+      <p class="section-subtitle">
+        Compare all plans to find the right fit for your needs
+      </p>
+
+      <div class="comparison-table-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th class="feature-column">Features</th>
+              <th class="community-column">Community</th>
+              <th class="starter-column">Starter</th>
+              <th class="team-column">Team</th>
+              <th class="enterprise-column">Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="category-row">
+              <td class="category-header" colspan="5">Capacity & Limits</td>
+            </tr>
+            <tr>
+              <td>Workspaces</td>
+              <td>1</td>
+              <td>5</td>
+              <td>20</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Servers</td>
+              <td>Up to 5</td>
+              <td>Up to 10</td>
+              <td>Up to 50</td>
+              <td>Unlimited</td>
+            </tr>
+            <tr>
+              <td>Monthly MCP Calls</td>
+              <td>50K</td>
+              <td
+                >250K<br /><span class="overage-text">$25 per 100K overage</span
+                ></td
+              >
+              <td
+                >1M<br /><span class="overage-text">$20 per 100K overage</span
+                ></td
+              >
+              <td>Unlimited</td>
+            </tr>
+
+            <tr class="category-row">
+              <td class="category-header" colspan="5">Core Platform</td>
+            </tr>
+            <tr>
+              <td>MCP Runtime Core</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>CLI & SDKs</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Community Connectors</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Community Registry Access</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Private Registry</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+
+            <tr class="category-row">
+              <td class="category-header" colspan="5">Hosting & Management</td>
+            </tr>
+            <tr>
+              <td>Self-hosted deployment</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Managed cloud hosting</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Web dashboard</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Basic monitoring</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+
+            <tr class="category-row">
+              <td class="category-header" colspan="5">Collaboration & Scale</td>
+            </tr>
+            <tr>
+              <td>Multi-workspace support</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Team permissions</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Advanced monitoring</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Load balancing & auto-scaling</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+
+            <tr class="category-row">
+              <td class="category-header" colspan="5">Security & Compliance</td>
+            </tr>
+            <tr>
+              <td>SSO integration</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>SOC2/HIPAA/GDPR compliance</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>VPC/BYOC deployments</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Premium connectors</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+
+            <tr class="category-row">
+              <td class="category-header" colspan="5">Support</td>
+            </tr>
+            <tr>
+              <td>Community support</td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Email support</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Priority support</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Dedicated support team</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr>
+              <td>SLA guarantees</td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="cross">✗</span></td>
+              <td><span class="check">✓</span></td>
+              <td><span class="check">✓</span></td>
+            </tr>
+            <tr class="buttons-row">
+              <td></td>
+              <td>
+                <a href={externalLinks.appLink} class="table-cta community-cta">
+                  <span>Start Free</span>
+                </a>
+              </td>
+              <td>
+                <a
+                  href={externalLinks.starterPayment}
+                  class="table-cta starter-cta"
+                >
+                  <span>Buy Now</span>
+                </a>
+              </td>
+              <td>
+                <a href={externalLinks.teamPayment} class="table-cta team-cta">
+                  <span>Buy Now</span>
+                </a>
+              </td>
+              <td>
+                <a
+                  href={externalLinks.schedulingLink}
+                  class="table-cta enterprise-cta"
+                >
+                  <span>Contact Sales</span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section section-bg-primary">
+    <div class="container">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h3>Is the Community Edition really free?</h3>
+          <p>
+            Yes! Our Community Edition is our managed cloud offering that's free
+            to use with generous limits. We also offer a fully open source
+            version for complete self-hosting control.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What counts as a workspace?</h3>
+          <p>
+            A workspace is an isolated environment for organizing your MCP
+            servers, team members, and projects. Think of it like a separate
+            team within NimbleTools.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What counts as a server?</h3>
+          <p>
+            A server is a running MCP server instance that provides tools and
+            resources to AI agents. Each unique MCP server deployment counts as
+            one server, regardless of how many agents connect to it.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>What counts as an MCP call?</h3>
+          <p>
+            An MCP call is any request made by an AI agent to your MCP server -
+            whether it's calling a tool, accessing a resource, or any other
+            interaction. We count both successful and failed requests.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do you charge per seat?</h3>
+          <p>
+            No! We're a usage-based pricing platform. You pay based on
+            workspaces, servers, and MCP calls - not the number of team members
+            or users accessing your account.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can I deploy in my own cloud?</h3>
+          <p>
+            Yes! You can self-host using our open source version for complete
+            control, or choose Enterprise for managed deployment in your own
+            AWS, Azure, or GCP environment with full support and compliance
+            features.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Format number with K/M suffix
+  function formatNumber(num) {
+    if (num > 1000000) {
+      return "1M+";
+    } else if (num >= 1000000) {
+      return "1M";
+    } else if (num >= 1000) {
+      return Math.round(num / 1000) + "K";
+    }
+    return num.toString();
+  }
+
+  // Format workspace count with 21+ suffix
+  function formatWorkspaces(num) {
+    if (num >= 21) {
+      return "21+";
+    }
+    return num.toString();
+  }
+
+  // Format server count with 51+ suffix
+  function formatServers(num) {
+    if (num >= 51) {
+      return "51+";
+    }
+    return num.toString();
+  }
+
+  // Calculate pricing based on inputs
+  function calculatePricing(workspaces, servers, invocations, byocRequired) {
+    // Enterprise threshold - if BYOC required or any limit exceeded
+    if (
+      byocRequired ||
+      workspaces > 20 ||
+      servers > 50 ||
+      invocations > 1000000
+    ) {
+      return {
+        plan: "Enterprise",
+        price: "Contact Sales",
+        details: byocRequired
+          ? "BYOC/On-premise deployment available"
+          : "Custom pricing for large organizations",
+      };
+    }
+
+    // Community plan (free)
+    if (workspaces <= 1 && servers <= 5 && invocations <= 50000) {
+      return {
+        plan: "Community",
+        price: "Free",
+        details: "Perfect for getting started",
+      };
+    }
+
+    // Starter plan
+    if (workspaces <= 5 && servers <= 10 && invocations <= 250000) {
+      let basePrice = 49;
+      let additionalCosts = 0;
+
+      // Calculate overages
+      if (invocations > 250000) {
+        const additionalInvocations = invocations - 250000;
+        const additionalUnits = Math.ceil(additionalInvocations / 100000);
+        additionalCosts += additionalUnits * 25;
+      }
+
+      const totalPrice = basePrice + additionalCosts;
+      const details =
+        additionalCosts > 0
+          ? `Base $49 + $${additionalCosts} overage`
+          : "Great for indie developers";
+
+      return {
+        plan: "Starter",
+        price: `$${totalPrice}<span style="font-size:12px;color:var(--text-secondary)">/month</span>`,
+        details: details,
+      };
+    }
+
+    // Team plan
+    if (workspaces <= 20 && servers <= 50 && invocations <= 1000000) {
+      let basePrice = 199;
+      let additionalCosts = 0;
+
+      // Calculate overages
+      if (invocations > 1000000) {
+        const additionalInvocations = invocations - 1000000;
+        const additionalUnits = Math.ceil(additionalInvocations / 100000);
+        additionalCosts += additionalUnits * 20;
+      }
+
+      const totalPrice = basePrice + additionalCosts;
+      const details =
+        additionalCosts > 0
+          ? `Base $199 + $${additionalCosts} overage`
+          : "Best for growing teams";
+
+      return {
+        plan: "Team",
+        price: `$${totalPrice}<span style="font-size:12px;color:var(--text-secondary)">/month</span>`,
+        details: details,
+      };
+    }
+
+    // Fallback to Enterprise
+    return {
+      plan: "Enterprise",
+      price: "Contact Sales",
+      details: "Custom pricing for your needs",
+    };
+  }
+
+  // Update calculator display
+  function updateCalculator() {
+    const workspaces = parseInt(document.getElementById("workspaces").value);
+    const servers = parseInt(document.getElementById("servers").value);
+    const invocations = parseInt(document.getElementById("invocations").value);
+    const byocRequired = document.getElementById("byoc").checked;
+
+    // Update slider displays
+    document.getElementById("workspaces-value").textContent =
+      formatWorkspaces(workspaces);
+    document.getElementById("servers-value").textContent =
+      formatServers(servers);
+    document.getElementById("invocations-value").textContent =
+      formatNumber(invocations);
+
+    // Calculate and display pricing
+    const result = calculatePricing(
+      workspaces,
+      servers,
+      invocations,
+      byocRequired
+    );
+    document.getElementById("plan-name").textContent = result.plan;
+    document.getElementById("plan-price").innerHTML = result.price;
+    document.getElementById("plan-details").textContent = result.details;
+
+    // Update recommended plan styling
+    const planElement = document.querySelector(".recommended-plan");
+    planElement.className = "recommended-plan";
+    const ctaElement = document.getElementById("calculator-cta");
+
+    if (result.plan === "Community") {
+      planElement.classList.add("community-plan");
+      ctaElement.style.display = "none";
+    } else if (result.plan === "Starter") {
+      planElement.classList.add("starter-plan");
+      ctaElement.style.display = "none";
+    } else if (result.plan === "Team") {
+      planElement.classList.add("team-plan");
+      ctaElement.style.display = "none";
+    } else if (result.plan === "Enterprise") {
+      planElement.classList.add("enterprise-plan");
+      ctaElement.style.display = "block";
+    }
+  }
+
+  // Initialize calculator
+  document.addEventListener("DOMContentLoaded", function () {
+    const sliders = ["workspaces", "servers", "invocations"];
+    sliders.forEach((id) => {
+      document.getElementById(id).addEventListener("input", updateCalculator);
+    });
+    document
+      .getElementById("byoc")
+      .addEventListener("change", updateCalculator);
+    updateCalculator();
+  });
+</script>
+
+<style>
+  /* Hero Section */
+  .hero {
+    text-align: center;
+  }
+
+  /* Calculator Section */
+
+  .calculator-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr auto 1fr;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .input-group {
+    margin-bottom: 32px;
+  }
+
+  .input-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    font-size: 16px;
+  }
+
+  .slider-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .slider {
+    flex: 1;
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    outline: none;
+    -webkit-appearance: none;
+  }
+
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+  }
+
+  .slider-value {
+    min-width: 60px;
+    text-align: right;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 14px;
+  }
+
+  .checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .checkbox {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+    cursor: pointer;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .checkbox-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    cursor: pointer;
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .recommended-plan {
+    text-align: center;
+    background: var(--bg-secondary);
+    border: 2px solid var(--accent);
+    border-radius: 12px;
+    padding: 32px 24px;
+    width: 200px;
+    min-height: 120px;
+    flex-shrink: 0;
+  }
+
+  .plan-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .plan-price {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+
+  .plan-price .period-small,
+  #plan-price .period-small {
+    font-size: 11px !important;
+    font-weight: 400 !important;
+    color: var(--text-secondary) !important;
+  }
+
+  .plan-details {
+    color: var(--text-secondary);
+    font-size: 14px;
+  }
+
+  .calculator-cta {
+    margin-top: 16px;
+  }
+
+  .calculator-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s;
+  }
+
+  .calculator-btn:hover {
+    background: #00cc6a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3);
+    text-decoration: none;
+  }
+
+  .vertical-separator {
+    width: 1px;
+    height: 100%;
+    background: var(--border);
+    margin: 0 16px;
+  }
+
+  .nomenclature-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 200px;
+  }
+
+  .nomenclature-item-compact {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  .nomenclature-icon-compact {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: var(--bg-primary);
+    flex-shrink: 0;
+  }
+
+  .nomenclature-text {
+    flex: 1;
+  }
+
+  .nomenclature-text h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 4px 0;
+    color: var(--text-primary);
+  }
+
+  .nomenclature-text p {
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* Pricing Section */
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .pricing-card {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px;
+    position: relative;
+    transition: all 0.3s;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .pricing-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  .pricing-card.featured {
+    border-color: var(--accent);
+    background: linear-gradient(
+      135deg,
+      var(--bg-primary),
+      rgba(0, 255, 136, 0.05)
+    );
+  }
+
+  .pricing-card.featured:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
+  }
+
+  .best-value-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #00ff88, #00cc6a);
+    color: white;
+    padding: 6px 20px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .plan-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: var(--accent);
+  }
+
+  .plan-pricing {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+
+  .price {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--text-primary);
+  }
+
+  .period {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 400;
+  }
+
+  .deployment-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 12px 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+    grid-row: 3;
+    align-self: start;
+  }
+
+  .deployment-icon {
+    font-size: 16px;
+  }
+
+  .plan-description {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    grid-row: 4;
+    align-self: start;
+    padding-top: 8px;
+  }
+
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    text-decoration: none;
+  }
+
+  .cta-button:hover {
+    background: #00cc6a;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3);
+    text-decoration: none;
+  }
+
+  .plan-limits {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+    margin-bottom: 24px;
+  }
+
+  .limit-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+
+  .limit-item::before {
+    content: "✓";
+    color: var(--accent);
+    font-weight: bold;
+    width: 16px;
+    font-size: 14px;
+  }
+
+  .limit-icon {
+    display: none;
+  }
+
+  .secondary-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.2s;
+    grid-row: 6;
+    align-self: start;
+    margin-top: 16px;
+  }
+
+  .secondary-link:hover {
+    color: var(--accent);
+  }
+
+  .secondary-link-spacer {
+    grid-row: 6;
+    align-self: start;
+    margin-top: 16px;
+    height: 20px;
+    display: block;
+  }
+
+  .enterprise-cta {
+    background: #4a7fff;
+    color: white;
+    border: none;
+    text-decoration: none;
+  }
+
+  .enterprise-cta:hover {
+    background: #3a6fee;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(74, 127, 255, 0.3);
+    text-decoration: none;
+  }
+
+  .coming-soon-cta {
+    background: var(--bg-tertiary) !important;
+    color: var(--text-secondary) !important;
+    border: 2px solid var(--border) !important;
+    cursor: not-allowed !important;
+    opacity: 0.6;
+  }
+
+  .coming-soon-cta:hover {
+    background: var(--bg-tertiary) !important;
+    color: var(--text-secondary) !important;
+    transform: none !important;
+    box-shadow: none !important;
+    opacity: 0.6;
+  }
+
+  .enterprise-card .plan-title {
+    color: #4a7fff;
+  }
+
+  .enterprise-card .plan-pricing {
+    color: #4a7fff;
+  }
+
+  .outline-cta {
+    background: transparent !important;
+    color: var(--accent) !important;
+    border: 2px solid var(--accent) !important;
+    text-decoration: none;
+  }
+
+  .outline-cta:hover {
+    background: var(--accent) !important;
+    color: var(--bg-primary) !important;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.3);
+  }
+
+  /* Open Source Section */
+  .open-source-section {
+    margin-top: 48px;
+  }
+
+  .open-source-card {
+    background: var(--bg-secondary);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+  }
+
+  .open-source-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+    align-items: center;
+  }
+
+  .open-source-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+
+  .open-source-left h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--text-primary);
+  }
+
+  .open-source-badge {
+    background: var(--accent);
+    color: var(--bg-primary);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .open-source-left p {
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .open-source-right {
+    display: flex;
+    align-items: center;
+  }
+
+  .enterprise-outline-cta {
+    background: transparent;
+    color: #4a7fff;
+    border: 2px solid #4a7fff;
+    text-decoration: none;
+  }
+
+  .enterprise-outline-cta:hover {
+    background: #4a7fff;
+    color: white;
+    text-decoration: none;
+  }
+
+  /* Nomenclature Section */
+
+  .nomenclature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .nomenclature-item {
+    text-align: center;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px 24px;
+    transition: all 0.3s;
+  }
+
+  .nomenclature-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .nomenclature-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    background: var(--accent);
+    color: var(--bg-primary);
+  }
+
+  .nomenclature-item h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+  }
+
+  .nomenclature-item p {
+    color: var(--text-secondary);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  /* Comparison Table */
+
+  .comparison-table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--bg-primary);
+  }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+  }
+
+  .comparison-table th {
+    background: var(--bg-secondary);
+    padding: 20px 16px;
+    text-align: center;
+    font-weight: 700;
+    border-bottom: 1px solid var(--border);
+    font-size: 15px;
+    color: var(--text-primary);
+  }
+
+  .feature-column {
+    width: 35%;
+    text-align: left !important;
+  }
+
+  .open-source-column,
+  .cloud-column,
+  .team-column,
+  .enterprise-column {
+    width: 16.25%;
+  }
+
+  .comparison-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .comparison-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+  }
+
+  .category-row td {
+    background: var(--bg-secondary);
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .category-header {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-align: left !important;
+  }
+
+  .check {
+    color: var(--accent);
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .cross {
+    color: var(--text-secondary);
+    font-size: 18px;
+    opacity: 0.5;
+  }
+
+  .overage-text {
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 0.7;
+    font-style: italic;
+  }
+
+  .buttons-row {
+    border-top: 2px solid var(--border);
+  }
+
+  .buttons-row td {
+    padding: 24px 16px;
+    text-align: center;
+  }
+
+  .table-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.2s;
+    min-width: 100px;
+  }
+
+  .community-cta,
+  .starter-cta,
+  .team-cta {
+    background: var(--accent);
+    color: var(--bg-primary);
+  }
+
+  .community-cta:hover,
+  .starter-cta:hover,
+  .team-cta:hover {
+    background: #00cc6a;
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  .enterprise-cta {
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+  }
+
+  .enterprise-cta:hover {
+    background: var(--accent);
+    color: var(--bg-primary);
+    transform: translateY(-2px);
+    text-decoration: none;
+  }
+
+  /* FAQ Section */
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 48px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .faq-item {
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+  }
+
+  .faq-item h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .faq-item p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    text-align: center;
+  }
+
+  .cta-section h2 {
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
+
+  .cta-section p {
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin-bottom: 48px;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Plan variations */
+  .community-plan {
+    border-color: var(--accent) !important;
+  }
+
+  .community-plan .plan-name {
+    color: var(--accent) !important;
+  }
+
+  .starter-plan {
+    border-color: #4a90e2 !important;
+  }
+
+  .starter-plan .plan-name {
+    color: #4a90e2 !important;
+  }
+
+  .team-plan {
+    border-color: #ff6b35 !important;
+  }
+
+  .team-plan .plan-name {
+    color: #ff6b35 !important;
+  }
+
+  .enterprise-plan {
+    border-color: #8b5cf6 !important;
+  }
+
+  .enterprise-plan .plan-name {
+    color: #8b5cf6 !important;
+  }
+
+  /* Responsive */
+  @media (max-width: 1200px) {
+    .pricing-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .pricing-card.featured {
+      transform: none;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .calculator-card {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .pricing-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 500px;
+    }
+
+    .open-source-content {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      text-align: center;
+    }
+
+    .open-source-header {
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .nomenclature-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 400px;
+    }
+
+    .comparison-table-wrapper {
+      font-size: 13px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 12px 8px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .calculator-card {
+      padding: 32px;
+    }
+
+    .input-group {
+      margin-bottom: 24px;
+    }
+
+    .plan-limits {
+      gap: 12px;
+    }
+
+    .limit-item {
+      justify-content: center;
+    }
+
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .price {
+      font-size: 32px;
+    }
+
+    .open-source-content {
+      padding: 24px;
+    }
+  }
+</style>
