@@ -13,17 +13,33 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <section class="hero section-bg-tertiary">
     <div class="container">
       <h1>
-        Deploy MCP Servers in Minutes<br /> With Enterprise Security and Scale.
+        Open Source MCP Platform<br /> With Enterprise Security and Scale.
       </h1>
       <p class="subtitle">
-        Spin up in minutes and scale to production — run in our cloud or yours,
-        with secrets isolated plus SSO and audit built in.
+        Deploy MCP servers in minutes with our open source platform — run in our
+        cloud or yours, with secrets isolated plus SSO and audit built in. Join
+        the community building the future of MCP.
       </p>
-      <div class="cta-block inline">
-        <InstallCLI />
-        <a href={externalLinks.schedulingLink} class="secondary-cta"
-          >Request a Demo</a
-        >
+      <div class="hero-cta-wrapper">
+        <a href={externalLinks.githubCore} class="get-started-btn">
+          Get Started
+        </a>
+        <div class="hero-install-cli">
+          <div class="install-command-wrapper">
+            <span class="command-prompt">></span>
+            <span class="install-command"
+              >curl -sSL install.nimbletools.ai | bash</span
+            >
+            <button
+              class="copy-btn"
+              onclick="copyToClipboard('curl -sSL https://raw.githubusercontent.com/NimbleBrainInc/nimbletools-core/refs/heads/main/install.sh | bash')"
+            >
+              📋
+            </button>
+          </div>
+          <!-- Copy notification popup positioned below this box -->
+          <div id="copy-notification" class="copy-notification">Copied!</div>
+        </div>
       </div>
 
       <div class="trust-badges">
@@ -36,8 +52,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <span>AWS, Azure & GCP Ready</span>
         </div>
         <div class="trust-badge">
-          <span>🔐</span>
-          <span>BYOC & Enterprise Security</span>
+          <span>🚀</span>
+          <span>Open Source & Community Driven</span>
         </div>
       </div>
     </div>
@@ -151,11 +167,11 @@ $ ntcli auth signup</pre>
             </a>
             <a href={externalLinks.docsGettingStarted} class="docs-link">
               <span>📖</span>
-              CLI Documentation
+              Documentation
             </a>
-            <a href={externalLinks.community} class="slack-link">
+            <a href={externalLinks.discord} class="slack-link">
               <span>💬</span>
-              Join Slack Community
+              Get Help
             </a>
           </div>
         </div>
@@ -291,24 +307,128 @@ $ ntcli auth signup</pre>
   </section>
 </BaseLayout>
 
+<script>
+  window.copyToClipboard = function (text) {
+    navigator.clipboard.writeText(text).then(() => {
+      showCopyNotification();
+    });
+  };
+
+  function showCopyNotification() {
+    const notification = document.getElementById("copy-notification");
+    if (notification) {
+      notification.classList.add("show");
+      setTimeout(() => {
+        notification.classList.remove("show");
+      }, 2000);
+    }
+  }
+</script>
+
 <style>
   /* Hero Section - specific styles only */
 
-  .cta-block {
+  .hero-cta-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 16px;
     align-items: center;
+    gap: 20px;
     margin-bottom: 16px;
   }
 
-  .cta-block.inline {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 24px;
+  .get-started-btn {
+    background: var(--accent);
+    color: var(--bg-primary);
+    padding: 16px 48px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all 0.2s;
+    display: inline-block;
+    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.2);
   }
 
+  .get-started-btn:hover {
+    background: var(--accent-dim);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(0, 255, 136, 0.3);
+  }
+
+  .hero-install-cli {
+    background: rgba(40, 44, 52, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 20px;
+    backdrop-filter: blur(10px);
+  }
+
+  .install-command-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 14px;
+    color: #ffffff;
+  }
+
+  .command-prompt {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .install-command {
+    color: #ffffff;
+    font-weight: 400;
+  }
+
+  .copy-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    padding: 4px;
+    font-size: 16px;
+    transition: all 0.2s;
+    border-radius: 4px;
+  }
+
+  .copy-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent);
+  }
+
+  /* Copy notification popup */
+  .copy-notification {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(40, 44, 52, 0.95);
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    margin-top: 8px;
+  }
+
+  .copy-notification.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(4px);
+  }
+
+  .hero-install-cli {
+    position: relative;
+  }
 
   /* Problem-Solution Section */
   .problem-solution {
@@ -1051,9 +1171,17 @@ $ ntcli auth signup</pre>
       font-size: 24px;
     }
 
-    .cta-block.inline {
-      flex-direction: column;
+    .hero-cta-wrapper {
       gap: 16px;
+    }
+
+    .get-started-btn {
+      padding: 14px 36px;
+      font-size: 16px;
+    }
+
+    .install-command-wrapper {
+      font-size: 12px;
     }
 
     .cli-links {

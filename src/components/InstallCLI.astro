@@ -10,10 +10,10 @@ const { class: className = "", variant = "primary" } = Astro.props;
 
 <button
   class={`install-cta ${variant === "primary" ? "primary-cta" : "secondary-cta"} ${className}`}
-  onclick="navigator.clipboard.writeText('npm i -g @nimbletools/ntcli'); this.innerHTML='✅ Copied!'; setTimeout(() => this.innerHTML='<div class=&quot;install-text&quot;>📋 Install the CLI</div><div class=&quot;install-command&quot;>npm i -g @nimbletools/ntcli</div>', 2000)"
+  onclick="navigator.clipboard.writeText('curl -sSL https://raw.githubusercontent.com/NimbleBrainInc/nimbletools-core/main/scripts/install.sh | bash'); this.innerHTML='✅ Copied!'; setTimeout(() => this.innerHTML='<div class=&quot;install-text&quot;>📋 Install NimbleTools</div><div class=&quot;install-command&quot;>curl -sSL install.nimbletools.ai | bash</div>', 2000)"
 >
-  <div class="install-text">📋 Install the CLI</div>
-  <div class="install-command">npm i -g @nimbletools/ntcli</div>
+  <div class="install-text">📋 Install NimbleTools</div>
+  <div class="install-command">curl -sSL install.nimbletools.ai | bash</div>
 </button>
 
 <style>

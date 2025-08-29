@@ -13,6 +13,7 @@ export const externalLinks = {
 
   // GitHub
   githubOrg: "https://github.com/NimbleBrainInc",
+  githubCore: "https://github.com/NimbleBrainInc/nimbletools-core",
   githubNtcli: "https://github.com/NimbleBrainInc/ntcli",
 
   // App and Payment links
@@ -20,5 +21,6 @@ export const externalLinks = {
   starterPayment: "https://buy.stripe.com/4gM5kvbxA6Tr74sfn038400",
   teamPayment: "https://buy.stripe.com/bJe7sD7hka5D4Wkgr438402",
 
-  community: "https://www.nimbletools.ai/slack",
+  slack: "/slack",
+  discord: "/discord",
 };
