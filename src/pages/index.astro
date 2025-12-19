@@ -1,1132 +1,345 @@
 ---
-import InstallCLI from "../components/InstallCLI.astro";
 import { externalLinks } from "../config/externalLinks.js";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import claudeLogo from "../assets/images/claude-logo.svg";
+import cursorLogo from "../assets/images/cursor-logo.svg";
+import openaiLogo from "../assets/images/openai-logo.svg";
+import vscodeLogo from "../assets/images/vscode-logo.svg";
+import windsurfLogo from "../assets/images/windsurf-logo-white.svg";
 ---
 
 <BaseLayout
-  title="NimbleTools - Enterprise MCP Runtime Platform"
-  description="Enterprise MCP server infrastructure and orchestration. Managed runtime with isolated workspaces, SSO, and cloud deployment for platform engineering teams."
-  keywords="MCP, Model Context Protocol, MCP servers, enterprise AI, platform engineering, SSO, BYOC, compliance, DevOps, infrastructure orchestration"
+  title="NimbleTools - Open Source MCP Runtime"
+  description="Deploy and run MCP servers on your own infrastructure. Open source runtime for the Model Context Protocol."
+  keywords="MCP, Model Context Protocol, MCP servers, open source, Kubernetes, MCP runtime"
   currentPage="home"
 >
   <section class="hero section-bg-tertiary">
     <div class="container">
-      <h1>
-        Open Source MCP Platform<br /> With Enterprise Security and Scale.
-      </h1>
+      <h1>Open Source MCP Runtime</h1>
       <p class="subtitle">
-        Deploy MCP servers in minutes with our open source platform — run in our
-        cloud or yours, with secrets isolated plus SSO and audit built in. Join
-        the community building the future of MCP.
+        Deploy and run MCP servers on your own infrastructure. A lightweight
+        runtime that makes it easy to spin up, manage, and scale MCP servers.
       </p>
-      <div class="hero-cta-wrapper">
-        <a href={externalLinks.githubCore} class="get-started-btn">
-          Get Started
+      <div class="hero-cta">
+        <a href={externalLinks.githubCore} class="primary-cta">
+          <svg
+            width="20"
+            height="20"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            style="margin-right: 8px;"
+          >
+            <path
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+            ></path>
+          </svg>
+          View on GitHub
         </a>
-        <div class="hero-install-cli">
-          <div class="install-command-wrapper">
-            <span class="command-prompt">></span>
-            <span class="install-command"
-              >curl -sSL install.nimbletools.ai | bash</span
-            >
-            <button
-              class="copy-btn"
-              onclick="copyToClipboard('curl -sSL https://raw.githubusercontent.com/NimbleBrainInc/nimbletools-core/refs/heads/main/install.sh | bash')"
-            >
-              📋
-            </button>
-          </div>
-          <!-- Copy notification popup positioned below this box -->
-          <div id="copy-notification" class="copy-notification">Copied!</div>
-        </div>
+        <a href={externalLinks.docs} class="secondary-cta"> Read the Docs </a>
       </div>
+    </div>
+  </section>
 
-      <div class="trust-badges">
-        <div class="trust-badge">
-          <span>🏢</span>
-          <span>SSO, Audit Logs & SLAs</span>
+  <section class="what-is section-bg-primary">
+    <div class="container">
+      <h2 class="section-title">What is NimbleTools?</h2>
+      <p class="section-subtitle">
+        NimbleTools is an open source runtime for deploying MCP (Model Context
+        Protocol) servers. It handles the infrastructure so you can focus on
+        building.
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </div>
+          <h3>Simple Deployment</h3>
+          <p>
+            Deploy MCP servers with a single command. No complex configuration
+            required.
+          </p>
         </div>
-        <div class="trust-badge">
-          <span>☁️</span>
-          <span>AWS, Azure & GCP Ready</span>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"
+              ></path>
+            </svg>
+          </div>
+          <h3>Kubernetes Native</h3>
+          <p>
+            Built for Kubernetes. Runs on your existing infrastructure with
+            standard tooling.
+          </p>
         </div>
-        <div class="trust-badge">
-          <span>🚀</span>
-          <span>Open Source & Community Driven</span>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </div>
+          <h3>CLI First</h3>
+          <p>
+            Manage everything from the command line. Scriptable and
+            automation-friendly.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="mcp-clients-section section-bg-primary">
+  <section class="quickstart section-bg-secondary" id="get-started">
     <div class="container">
-      <h2 class="section-title">Works With Your Favorite MCP Clients</h2>
+      <h2 class="section-title">Get Started</h2>
+      <p class="section-subtitle">Up and running in minutes</p>
+
+      <div class="quickstart-card">
+        <div class="code-block">
+          <pre><span class="code-comment"># Install the CLI</span>
+curl -sSL https://raw.githubusercontent.com/NimbleBrainInc/nimbletools-core/main/install.sh | bash
+
+<span class="code-comment"># Deploy an MCP server</span>
+ntcli server deploy github-mcp
+
+<span class="code-comment"># Check status</span>
+ntcli server status</pre>
+        </div>
+        <div class="quickstart-links">
+          <a href={externalLinks.docs} class="docs-link">
+            <span>Full documentation</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="clients section-bg-primary">
+    <div class="container">
+      <h2 class="section-title">Works With Any MCP Client</h2>
       <p class="section-subtitle">
-        Connect any MCP-compatible client to your remote servers
+        Connect your favorite AI tools to MCP servers deployed with NimbleTools
       </p>
 
       <div class="clients-row">
-        <div class="client-logo claude-web">
-          <img
-            src="https://cdn.brandfetch.io/claude.ai/w/338/h/338?c=1idyxjg0fWEyhdkPzvM"
-            alt="Claude"
-            width="64"
-            height="64"
-            loading="lazy"
-          />
+        <div class="client-logo">
+          <img src={claudeLogo.src} alt="Claude" width="70" height="70" />
         </div>
-
-        <div class="client-logo openai">
-          <img
-            src="https://cdn.brandfetch.io/openai.com/w/512/h/512?c=1idyxjg0fWEyhdkPzvM"
-            alt="OpenAI"
-            width="64"
-            height="64"
-            loading="lazy"
-          />
+        <div class="client-logo">
+          <img src={openaiLogo.src} alt="OpenAI" width="70" height="70" />
         </div>
-
-        <div class="client-logo cursor">
-          <img
-            src="https://cdn.brandfetch.io/cursor.com/w/400/h/400?c=1idyxjg0fWEyhdkPzvM"
-            alt="Cursor"
-            width="64"
-            height="64"
-            loading="lazy"
-          />
+        <div class="client-logo">
+          <img src={cursorLogo.src} alt="Cursor" width="70" height="70" />
         </div>
-
-        <div class="client-logo google">
-          <img
-            src="https://cdn.brandfetch.io/google.com/w/400/h/400?c=1idyxjg0fWEyhdkPzvM"
-            alt="Google"
-            width="64"
-            height="64"
-            loading="lazy"
-          />
+        <div class="client-logo">
+          <img src={vscodeLogo.src} alt="VS Code" width="70" height="70" />
         </div>
-
-        <div class="client-logo continue">
-          <img
-            src="https://cdn.brandfetch.io/visualstudio.com/w/512/h/512/logo?c=1idyxjg0fWEyhdkPzvM"
-            alt="VS Code"
-            width="64"
-            height="64"
-            loading="lazy"
-          />
-        </div>
-
-        <div class="client-logo windsurf">
-          <img
-            src="https://cdn.brandfetch.io/codeium.com/w/400/h/400?c=1idyxjg0fWEyhdkPzvM"
-            alt="Windsurf"
-            width="64"
-            height="64"
-            loading="lazy"
-          />
-        </div>
-
-        <div class="client-logo langchain">
-          <img
-            src="https://cdn.brandfetch.io/langchain.com/w/400/h/400?c=1idyxjg0fWEyhdkPzvM"
-            alt="LangChain"
-            width="64"
-            height="64"
-            loading="lazy"
-          />
+        <div class="client-logo">
+          <img src={windsurfLogo.src} alt="Windsurf" width="70" height="70" />
         </div>
       </div>
     </div>
   </section>
 
-  <section class="social-proof section-bg-tertiary" id="get-started">
+  <section class="about section-bg-tertiary">
     <div class="container">
-      <h2 class="section-title">Get Started with the CLI</h2>
-      <p class="section-subtitle">Install once, deploy anywhere</p>
-
-      <div class="cli-install-section">
-        <div class="install-card">
-          <h3>Quick Install</h3>
-          <div class="code-block">
-            <pre><span class="code-comment"># Install the NimbleTools CLI</span>
-$ npm install -g @nimbletools/ntcli
-
-<span class="code-comment"># Verify installation</span>
-$ ntcli --version
-<span style="color: var(--accent)">ntcli v0.1.0</span>
-
-<span class="code-comment"># Create your account and start deploying</span>
-$ ntcli auth signup</pre>
-          </div>
-
-          <div class="cli-links">
-            <a href={externalLinks.githubNtcli} class="github-link">
-              <span>📦</span>
-              View on GitHub
-            </a>
-            <a href={externalLinks.docsGettingStarted} class="docs-link">
-              <span>📖</span>
-              Documentation
-            </a>
-          </div>
+      <div class="about-content">
+        <p class="about-text">
+          NimbleTools is an open source project by <a
+            href={externalLinks.nimblebrain}>NimbleBrain</a
+          >, building infrastructure for the next generation of AI
+          applications.
+        </p>
+        <div class="about-cta">
+          <a href={externalLinks.githubCore} class="primary-cta">
+            Contribute on GitHub
+          </a>
         </div>
-
-        <div class="why-cli">
-          <h3>Why CLI First?</h3>
-          <ul>
-            <li>
-              <strong>Automation Ready</strong>
-              <p>Integrate with your CI/CD pipelines from day one</p>
-            </li>
-            <li>
-              <strong>Version Control</strong>
-              <p>Track your MCP server configurations in git</p>
-            </li>
-            <li>
-              <strong>Scriptable Deployments</strong>
-              <p>Deploy dozens of servers with a single script</p>
-            </li>
-            <li>
-              <strong>Developer Workflow</strong>
-              <p>Stay in your terminal, no context switching</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="cta-section section-bg-secondary">
-    <div class="container">
-      <h2>Start Free. Scale to Enterprise.</h2>
-      <p>
-        Deploy your first MCP server in under 5 minutes with our CLI. When
-        you're ready to scale, upgrade to Team or Enterprise with one command.
-      </p>
-
-      <div class="cta-benefits">
-        <div class="cta-benefit">
-          <span class="benefit-icon">⚡</span>
-          <span>Deploy in minutes</span>
-        </div>
-        <div class="cta-benefit">
-          <span class="benefit-icon">🆓</span>
-          <span>Start completely free</span>
-        </div>
-        <div class="cta-benefit">
-          <span class="benefit-icon">📈</span>
-          <span>Scale when you need it</span>
-        </div>
-      </div>
-
-      <div class="hero-cta">
-        <a href="#get-started" class="primary-cta">
-          <span>Get Started</span>
-          <span>→</span>
-        </a>
       </div>
     </div>
   </section>
 </BaseLayout>
 
-<script>
-  window.copyToClipboard = function (text) {
-    navigator.clipboard.writeText(text).then(() => {
-      showCopyNotification();
-    });
-  };
-
-  function showCopyNotification() {
-    const notification = document.getElementById("copy-notification");
-    if (notification) {
-      notification.classList.add("show");
-      setTimeout(() => {
-        notification.classList.remove("show");
-      }, 2000);
-    }
-  }
-</script>
-
 <style>
-  /* Hero Section - specific styles only */
-
-  .hero-cta-wrapper {
+  /* Hero */
+  .hero-cta {
     display: flex;
-    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
     align-items: center;
-    gap: 20px;
-    margin-bottom: 16px;
   }
 
-  .get-started-btn {
-    background: var(--accent);
-    color: var(--bg-primary);
-    padding: 16px 48px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 18px;
-    transition: all 0.2s;
-    display: inline-block;
-    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.2);
+  /* Features Grid */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
-  .get-started-btn:hover {
-    background: var(--accent-dim);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 30px rgba(0, 255, 136, 0.3);
-  }
-
-  .hero-install-cli {
-    background: rgba(40, 44, 52, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  .feature-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 12px 20px;
-    backdrop-filter: blur(10px);
-  }
-
-  .install-command-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-family: "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
-    font-size: 14px;
-    color: #ffffff;
-  }
-
-  .command-prompt {
-    color: var(--accent);
-    font-weight: 600;
-  }
-
-  .install-command {
-    color: #ffffff;
-    font-weight: 400;
-  }
-
-  .copy-btn {
-    background: transparent;
-    border: none;
-    color: rgba(255, 255, 255, 0.7);
-    cursor: pointer;
-    padding: 4px;
-    font-size: 16px;
-    transition: all 0.2s;
-    border-radius: 4px;
-  }
-
-  .copy-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--accent);
-  }
-
-  /* Copy notification popup */
-  .copy-notification {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(40, 44, 52, 0.95);
-    color: #ffffff;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 14px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-    margin-top: 8px;
-  }
-
-  .copy-notification.show {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(4px);
-  }
-
-  .hero-install-cli {
-    position: relative;
-  }
-
-  /* Problem-Solution Section */
-  .problem-solution {
-    padding: 80px 0;
-    background: var(--bg-primary);
-  }
-
-  .problem-solution-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: start;
-  }
-
-  .problem-side,
-  .solution-side {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-  }
-
-  .problem-side h2 {
-    color: #ff6b6b;
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    line-height: 1.2;
-  }
-
-  .solution-side h2 {
-    color: var(--accent);
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 24px;
-    line-height: 1.2;
-  }
-
-  .problem-solution p {
-    color: var(--text-secondary);
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 32px;
-  }
-
-  .problem-list,
-  .solution-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .problem-list li,
-  .solution-list li {
-    padding: 16px 0;
-    font-size: 16px;
-    line-height: 1.6;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .problem-list li:last-child,
-  .solution-list li:last-child {
-    border-bottom: none;
-  }
-
-  .problem-list li {
-    color: var(--text-primary);
-  }
-
-  .solution-list li {
-    color: var(--text-primary);
-  }
-
-  /* Problem-Solution Flow Section */
-  .problem-solution-flow {
-    padding: 80px 0;
-    background: var(--bg-primary);
-  }
-
-  .flow-grid {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 48px;
-    align-items: start;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .flow-section {
-    min-height: 400px;
-  }
-
-  .flow-header {
-    margin-bottom: 32px;
-  }
-
-  .flow-badge {
-    display: inline-block;
-    padding: 6px 16px;
-    border-radius: 16px;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 16px;
-  }
-
-  .problem-badge {
-    background: rgba(255, 107, 107, 0.15);
-    color: #ff6b6b;
-    border: 1px solid #ff6b6b;
-  }
-
-  .solution-badge {
-    background: rgba(0, 255, 136, 0.15);
-    color: var(--accent);
-    border: 1px solid var(--accent);
-  }
-
-  .flow-section h2 {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 0;
-    line-height: 1.2;
-  }
-
-  .problem-section h2 {
-    color: #ff6b6b;
-  }
-
-  .solution-section h2 {
-    color: var(--accent);
-  }
-
-  .flow-points {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .flow-point {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .point-icon {
-    font-size: 24px;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .point-content h4 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    line-height: 1.3;
-  }
-
-  .problem-section .point-content h4 {
-    color: #ff6b6b;
-  }
-
-  .solution-section .point-content h4 {
-    color: var(--accent);
-  }
-
-  .point-content p {
-    color: var(--text-secondary);
-    font-size: 15px;
-    line-height: 1.4;
-    margin: 0;
-  }
-
-  .flow-transition {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 200px;
-  }
-
-  .flow-arrow {
-    font-size: 32px;
-    color: var(--accent);
-    margin-bottom: 12px;
-    font-weight: bold;
-  }
-
-  .transition-text {
-    color: var(--text-secondary);
-    font-size: 14px;
-    font-style: italic;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    white-space: nowrap;
-  }
-
-  /* Demo Section */
-  .demo-section {
-    padding: 80px 0;
-    background: var(--bg-secondary);
-  }
-
-  .demo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 32px;
-    margin-top: 48px;
-  }
-
-  .demo-card {
-    background: var(--bg-primary);
-    border: 1px solid var(--border);
-    border-radius: 16px;
     padding: 32px;
-    transition: all 0.3s;
+    text-align: center;
+    transition: all 0.2s;
   }
 
-  .demo-card:hover {
-    border-color: var(--text-secondary);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  }
-
-  .demo-card.featured {
+  .feature-card:hover {
     border-color: var(--accent);
+    transform: translateY(-2px);
   }
 
-  .demo-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
+  .feature-icon {
+    color: var(--accent);
     margin-bottom: 20px;
-  }
-
-  .demo-icon {
-    font-size: 32px;
-    line-height: 1;
     display: flex;
-    align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
   }
 
-  .demo-icon img {
-    border-radius: 6px;
-  }
-
-  .demo-header h3 {
+  .feature-card h3 {
     font-size: 20px;
     font-weight: 600;
-    margin: 0;
+    margin-bottom: 12px;
   }
 
-  .demo-content p {
+  .feature-card p {
     color: var(--text-secondary);
-    margin-bottom: 24px;
+    font-size: 15px;
     line-height: 1.6;
   }
 
-  .demo-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
+  /* Quickstart */
+  .quickstart-card {
+    max-width: 700px;
+    margin: 0 auto;
   }
 
-  .action-tag {
-    background: rgba(0, 255, 136, 0.1);
-    color: var(--accent);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 500;
-    border: 1px solid rgba(0, 255, 136, 0.2);
-  }
-
-  .demo-cta {
-    text-align: center;
-    margin-top: 64px;
-    padding: 48px 32px;
-    background: var(--bg-primary);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-  }
-
-  .demo-cta p {
-    color: var(--text-secondary);
-    font-size: 18px;
+  .quickstart-card .code-block {
     margin-bottom: 24px;
   }
 
-  .demo-btn {
-    background: var(--accent);
-    color: var(--bg-primary);
-    padding: 12px 32px;
-    border-radius: 8px;
+  .quickstart-links {
+    display: flex;
+    justify-content: center;
+  }
+
+  .docs-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent);
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.2s;
-    display: inline-block;
-  }
-
-  .demo-btn:hover {
-    background: var(--accent-dim);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
-  }
-
-  /* Enterprise Workspaces */
-  .enterprise-workspaces {
-    padding: 80px 0;
-    background: var(--bg-secondary);
-  }
-
-  .workspaces-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 32px;
-    margin-top: 48px;
-  }
-
-  .workspace-card {
-    background: var(--bg-primary);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 32px;
-    transition: all 0.3s;
-  }
-
-  .workspace-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  }
-
-  .workspace-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .workspace-icon {
-    font-size: 48px;
-    margin-bottom: 16px;
-  }
-
-  .workspace-header h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-
-  .workspace-team {
-    color: var(--text-secondary);
-    font-size: 14px;
-    margin: 0;
-  }
-
-  .workspace-tools {
-    margin-bottom: 24px;
-  }
-
-  .tool-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 0;
-    font-size: 14px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .tool-item:last-child {
-    border-bottom: none;
-  }
-
-  .tool-item img {
-    border-radius: 4px;
-  }
-
-  .tool-icon {
     font-size: 16px;
-    line-height: 1;
+    transition: gap 0.2s;
   }
 
-  .workspace-description {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    font-size: 15px;
+  .docs-link:hover {
+    gap: 12px;
   }
 
-  .workspace-benefits {
-    margin-top: 80px;
-    text-align: center;
-  }
-
-  .workspace-benefits h3 {
-    font-size: 32px;
-    margin-bottom: 48px;
-  }
-
-  .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 32px;
-    margin-top: 32px;
-  }
-
-  .benefit-item {
-    text-align: center;
-  }
-
-  .benefit-icon {
-    font-size: 32px;
-    margin-bottom: 16px;
-  }
-
-  .benefit-item h4 {
-    font-size: 18px;
-    margin-bottom: 12px;
-    color: var(--text-primary);
-  }
-
-  .benefit-item p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    font-size: 14px;
-  }
-
-  /* MCP Clients Section - specific styles only */
-
+  /* Clients */
   .clients-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-top: 48px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 60px;
     flex-wrap: wrap;
-    gap: 16px;
   }
 
   .client-logo {
-    width: 64px;
-    height: 64px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s;
-    cursor: pointer;
+    width: 70px;
+    height: 70px;
   }
 
-  .client-logo:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  .client-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
-  .compatibility-note {
+  /* About */
+  .about-content {
     text-align: center;
-    margin-top: 48px;
-    padding-top: 32px;
-    border-top: 1px solid var(--border);
+    max-width: 600px;
+    margin: 0 auto;
   }
 
-  .compatibility-note p {
-    color: var(--text-secondary);
-    font-size: 15px;
-    font-weight: 500;
-  }
-
-  /* Pricing Section - specific styles only */
-
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 32px;
-    margin-top: 48px;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .pricing-card {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 32px;
-    position: relative;
-    transition: all 0.3s;
-    text-align: center;
-  }
-
-  .pricing-card:hover {
-    border-color: var(--accent);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  }
-
-  .pricing-card.featured {
-    border-color: var(--accent);
-    transform: scale(1.05);
-  }
-
-  .pricing-badge {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--accent);
-    color: var(--bg-primary);
-    padding: 6px 20px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .pricing-header {
-    margin-bottom: 32px;
-  }
-
-  .pricing-card h3 {
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 16px;
-  }
-
-  .price {
-    font-size: 48px;
-    font-weight: 700;
-    color: var(--accent);
-    margin-bottom: 8px;
-    line-height: 1;
-  }
-
-  .price-unit {
+  .about-text {
     font-size: 18px;
-    font-weight: 500;
     color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.7;
   }
 
-  .price-description {
-    color: var(--text-secondary);
-    font-size: 14px;
-    margin: 0;
-  }
-
-  .pricing-features {
-    list-style: none;
-    text-align: left;
-    margin: 0;
-    padding: 0;
-  }
-
-  .pricing-features li {
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border);
-    color: var(--text-primary);
-    font-size: 15px;
-  }
-
-  .pricing-features li:last-child {
-    border-bottom: none;
-  }
-
-  .pricing-footer {
-    text-align: center;
-    margin-top: 48px;
-    padding-top: 32px;
-    border-top: 1px solid var(--border);
-  }
-
-  .pricing-footer p {
-    color: var(--text-secondary);
-    font-size: 16px;
-    margin: 0;
-  }
-
-  .pricing-link {
+  .about-text a {
     color: var(--accent);
     text-decoration: none;
     font-weight: 600;
   }
 
-  .pricing-link:hover {
+  .about-text a:hover {
     text-decoration: underline;
   }
 
-  /* CLI Section - specific styles only */
-
-  /* CLI Install Section */
-  .cli-install-section {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 48px;
-    margin-top: 64px;
-    align-items: start;
-  }
-
-  .install-card {
-    background: var(--bg-primary);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 48px;
-  }
-
-  .install-card h3 {
-    font-size: 24px;
-    margin-bottom: 24px;
-  }
-
-  .install-card .code-block {
-    margin-bottom: 32px;
-  }
-
-  .cli-links {
-    display: flex;
-    gap: 24px;
-  }
-
-  .cli-links a {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-primary);
-    text-decoration: none;
-    padding: 12px 24px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    transition: all 0.2s;
-    font-weight: 600;
-  }
-
-  .cli-links a:hover {
-    border-color: var(--accent);
-    background: var(--bg-secondary);
-  }
-
-  .why-cli h3 {
-    font-size: 24px;
-    margin-bottom: 32px;
-  }
-
-  .why-cli ul {
-    list-style: none;
-  }
-
-  .why-cli li {
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .why-cli li:last-child {
-    border-bottom: none;
-  }
-
-  .why-cli li strong {
-    display: block;
-    font-size: 16px;
-    margin-bottom: 8px;
-    color: var(--text-primary);
-  }
-
-  .why-cli li p {
-    color: var(--text-secondary);
-    font-size: 14px;
-  }
-
-  /* CTA Section - specific styles only */
-
-  .cta-benefits {
+  .about-cta {
     display: flex;
     justify-content: center;
-    gap: 48px;
-    margin-bottom: 40px;
-  }
-
-  .cta-benefit {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-primary);
-    font-weight: 600;
-  }
-
-  .benefit-icon {
-    font-size: 20px;
-  }
-
-  .cta-note {
-    font-size: 14px;
-    color: var(--text-secondary);
-    margin-top: 16px;
-    font-style: italic;
   }
 
   /* Responsive */
   @media (max-width: 768px) {
-    .cli-install-section,
-    .problem-solution-grid,
-    .flow-grid,
-    .workspaces-grid,
-    .benefits-grid {
+    .features-grid {
       grid-template-columns: 1fr;
-    }
-
-    .problem-solution-grid {
-      gap: 48px;
-    }
-
-    .problem-side h2,
-    .solution-side h2 {
-      font-size: 24px;
-    }
-
-    .flow-grid {
-      gap: 32px;
-    }
-    .flow-transition {
-      min-height: auto;
-    }
-    .flow-arrow {
-      transform: rotate(90deg);
-    }
-    .transition-text {
-      writing-mode: horizontal-tb;
-      text-orientation: initial;
-    }
-
-    .workspace-benefits h3 {
-      font-size: 24px;
-    }
-
-    .hero-cta-wrapper {
-      gap: 16px;
-    }
-
-    .get-started-btn {
-      padding: 14px 36px;
-      font-size: 16px;
-    }
-
-    .install-command-wrapper {
-      font-size: 12px;
-    }
-
-    .cli-links {
-      flex-direction: column;
-    }
-
-    .pricing-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .pricing-card.featured {
-      transform: none;
-    }
-
-    .cta-benefits {
-      flex-direction: column;
       gap: 24px;
     }
 
-    .cta-benefit {
-      justify-content: center;
+    .hero-cta {
+      flex-direction: column;
+    }
+
+    .clients-row {
+      gap: 32px;
     }
   }
 </style>

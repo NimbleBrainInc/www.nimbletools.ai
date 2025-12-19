@@ -242,96 +242,12 @@ h1 {
 
 /* Footer */
 footer {
-  padding: 48px 0;
+  padding: 32px 0;
   background: #0d1117;
   border-top: 1px solid var(--border);
 }
 
-.footer-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 48px;
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 16px;
-}
-
-.footer-logo span {
-  color: var(--accent);
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.footer-brand p {
-  color: var(--text-secondary);
-  font-size: 14px;
-  line-height: 1.7;
-}
-
-.footer-column h4 {
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: var(--text-primary);
-}
-
-.footer-column ul {
-  list-style: none;
-}
-
-.footer-column li {
-  margin-bottom: 12px;
-}
-
-.footer-column a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.2s;
-}
-
-.footer-column a:hover {
-  color: var(--text-primary);
-}
-
-.social-links {
-  display: flex;
-  gap: 16px;
-  margin-top: 8px;
-}
-
-.footer-bottom .social-links {
-  margin-top: 0;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  color: var(--text-secondary);
-  transition: all 0.2s;
-  text-decoration: none;
-}
-
-.social-link:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: rgba(0, 255, 136, 0.1);
-  transform: translateY(-1px);
-}
-
 .footer-bottom {
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -340,6 +256,22 @@ footer {
 .footer-bottom p {
   color: var(--text-secondary);
   font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--text-primary);
 }
 
 /* Core Section Styles */
@@ -492,7 +424,13 @@ section {
     flex-direction: column;
   }
 
-  .footer-content {
-    grid-template-columns: 1fr;
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
   }
 }

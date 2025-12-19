@@ -1,0 +1,49 @@
+# NimbleTools
+
+> Open source MCP runtime for deploying Model Context Protocol servers on your own infrastructure.
+
+## What is NimbleTools?
+
+NimbleTools is an open source runtime that makes it easy to deploy, manage, and scale MCP (Model Context Protocol) servers. It's built for Kubernetes and designed for developers who want to run MCP servers on their own infrastructure.
+
+MCP (Model Context Protocol) is an open standard that enables AI assistants to connect to external data sources and tools. NimbleTools provides the infrastructure layer to run these MCP servers reliably.
+
+## Key Features
+
+- Simple Deployment: Deploy MCP servers with a single command, no complex configuration required
+- Kubernetes Native: Built for Kubernetes, runs on your existing infrastructure with standard tooling
+- CLI First: Manage everything from the command line, scriptable and automation-friendly
+- Works with Any MCP Client: Compatible with Claude, Cursor, VS Code, Windsurf, and other MCP-compatible tools
+
+## Quick Start
+
+Install the CLI:
+curl -sSL https://raw.githubusercontent.com/NimbleBrainInc/nimbletools-core/main/install.sh | bash
+
+Deploy an MCP server:
+ntcli server deploy github-mcp
+
+Check status:
+ntcli server status
+
+## Use Cases
+
+- Run MCP servers for GitHub, databases, APIs, and other integrations
+- Self-host MCP infrastructure for privacy and control
+- Scale MCP servers across your Kubernetes cluster
+- Integrate AI assistants with your internal tools and data
+
+## Links
+
+- Website: https://www.nimbletools.ai
+- Documentation: https://docs.nimblebrain.ai/runtime/introduction
+- GitHub: https://github.com/NimbleBrainInc/nimbletools-core
+- Parent Company: https://www.nimblebrain.ai
+
+## About
+
+NimbleTools is an open source project by NimbleBrain, Inc., a company building infrastructure for the next generation of AI applications.
+
+## License
+
+Open source. See the GitHub repository for license details.
